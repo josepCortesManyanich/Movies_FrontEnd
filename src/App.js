@@ -8,12 +8,14 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
+import Movies from './views/Movies';
 
 function App() {
   return (
     <div className="App">
       <Toaster/>
       <Navbar />
+      <Movies/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
