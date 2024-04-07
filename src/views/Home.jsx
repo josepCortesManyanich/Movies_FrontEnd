@@ -3,6 +3,7 @@ import Login from './auth/Login'
 import Signup from './auth/Signup'
 import Navbar1 from '../components/Navbar1';
 import { Link } from 'react-router-dom';
+import Movies from './Movies';
 
 export default function Home() {
 
@@ -29,6 +30,7 @@ export default function Home() {
        
       </div>
       </ul>
+      <Movies/>
 
 
     </div>
