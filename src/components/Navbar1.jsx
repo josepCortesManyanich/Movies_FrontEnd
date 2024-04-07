@@ -7,8 +7,8 @@ import { NavLink } from 'react-router-dom'
     <div>
       <ol>
         <li><NavLink to='/perfil'>Perfil</NavLink></li>
-        <li><NavLink to='/peliculas'>Perfil</NavLink></li>
-        <li><NavLink to='/series'>Perfil</NavLink></li>
+        <li><NavLink to='/peliculas'>Peliculas</NavLink></li>
+        <li><NavLink to='/series'>Series</NavLink></li>
       </ol>
     </div>
   )
