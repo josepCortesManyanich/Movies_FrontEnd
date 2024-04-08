@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from './auth/Login'
 import Signup from './auth/Signup'
-import Navbar1 from '../components/Navbar1';
+import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import Movies from './Movies';
 
@@ -16,7 +16,7 @@ export default function Home() {
       <ul>
         
         
-       <Navbar1/>
+       <Navbar/>
         <h3> BIENVENIDO A BADAL MEDIA</h3>
         <h2>Tus peliculas y series favoritas en un click</h2>
 
@@ -30,7 +30,7 @@ export default function Home() {
        
       </div>
       </ul>
-      <Movies/>
+      
 
 
     </div>
