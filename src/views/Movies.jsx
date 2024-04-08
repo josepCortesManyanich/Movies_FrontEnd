@@ -48,10 +48,7 @@ import axios from 'axios'
               <li key={elemento.id} className='item'> 
                   <div className='contenido'>
                       <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                      <div className='cuadro'>
                       <p>{elemento.title}</p>
-                      </div>
-                     
                   </div>
                 </li> )
         })}
