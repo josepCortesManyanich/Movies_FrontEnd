@@ -16,36 +16,60 @@ body {
   color: red;
 }
 
+/*estilos navbar*/
+
 .header {
-  background-color: rgb(104, 100, 100);
+  width: 2000px;
+  background-color: rgb(3, 3, 3);
   text-align: center;
+  height: 100px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  max-height: 100px;
-  border-bottom: 1px solid red;
+  padding: 0 20px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
 }
 
 
 
-.menu>ul {
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
-
+  width: 100%;
 }
 
 .menu li {
-  text-transform: uppercase;
-  flex-direction: row;
-  color: red;
-  justify-content: center;
-  padding: 2px;
+  margin-right: 80px;
+  padding: 60px;
+  color: #f00505;
+
 }
+
+.menu li a {
+  font-size: 25px;
+  color: #f80505;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu li:first-child {
+  margin-left: 15px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+  /* Elimina el margen derecho del último elemento */
+}
+
 
 /*estilos home*/
 

@@ -8,6 +8,8 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
+import Movies from '../views/Movies';
+import Series from '../views/Series';
 
 function Routes() {
   return (
@@ -15,10 +17,12 @@ function Routes() {
         <Toaster>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/peliculas" element={<Movies/>} />
+                <Route path="/series" element={<Series/>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
                 <Route path="*" element={<ErrorPage />} />
-                
+
             </Routes>
         </Toaster>
     </div>

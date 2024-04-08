@@ -7,7 +7,7 @@ import Movies from './views/Movies';
 function App() {
   return (
     <div className="App"> 
-      <Home/>
+      <Movies/>
     </div>
   );
 }
