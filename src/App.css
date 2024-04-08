@@ -8,8 +8,8 @@
 }
 
 body {
-  background-color: red;
-  background-size: cover;
+  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712550726/collagepelicula_qok9gy.jpg');
+  background-size: 100%;
 }
 
 .selected {
@@ -49,55 +49,120 @@ body {
 
 /*estilos home*/
 
-home-container {
+.contenedor-home {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-size: 100%;
 }
 
-.welcome-section {
+.bienvenida {
+  width: 1400px;
+  background-color: #050505;
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+
+}
+
+.bienvenida1 {
+  width: 1400px;
+  background-color: #080808;
+  padding: 20px;
+  border-radius: 0 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+}
+
+
+
+.bienvenida h3 {
+  font-size: 80px;
+  color: #f00505;
+}
+
+.bienvenida1 h2 {
+  font-size: 36px;
+  color: #f30303;
+}
+
+.seccion-login {
   margin-top: 50px;
 }
 
-.welcome-section h3 {
-  font-size: 24px;
-  color: #333;
-}
-
-.welcome-section h2 {
-  font-size: 32px;
-  color: #666;
-}
-
-.login-section {
-  margin-top: 50px;
-}
-
-.signup-section {
-  margin-top: 20px;
+.seccion-signup {
+  width: 800px;
+  margin-bottom: 25px;
+  background-color: #080808;
+  padding: 20px;
+  border-radius: 0 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .seccion-signup p {
-  font-size: 18px;
-  color: #333;
+  font-size: 30px;
+  color: hsl(0, 9%, 96%);
 }
 
 .seccion-signup button {
+  width: 40%;
+  height: 45px;
+  padding: 10px 20px;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  background-color: #ff1100;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+/*estilos del formulario de la vista login.jsx*/
+.formulario {
+  width: 800px;
+  height: 250px;
+  background-color: #050505;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario label {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #f7f4f4;
+}
+
+.formulario input[type="email"],
+.formulario input[type="password"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+
+.formulario button[type="submit"] {
+  width: 98%;
+  margin-top: 20px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
+  background-color: #ff0800;
+  color: #f5f2f2;
+  font-size: 25px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+
 }
 
-.seccion-signup button:hover {
-  background-color: #0056b3;
-}
 
 /*estilos de las listas de las peliculas y series*/
 .list {
