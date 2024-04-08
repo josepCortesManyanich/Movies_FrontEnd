@@ -15,6 +15,9 @@ import Navbar from '../components/Navbar'
     /* el use State es declarado null ya que va a recibir los datos de forma asíncrona*/ 
     const [movies , setMovies] = useState(null)
     const [movies1, setMovies1] = useState(null)
+    const [busqueda, setBusqueda] = useState('')
+    const [peliculasEncontradas, setPeliculasEncontradas] = useState([]);
+   
 
    /* este hook es para cargar las imagenes de la base de datos cuando nos ponemos en la vist */
    
@@ -61,14 +64,67 @@ import Navbar from '../components/Navbar'
       data1()
 
   }, [])
+  
+
+  /*Barra de buscador*/
+const handleBuscador = ((e) =>{
+  const valorBuscado = e.target.value.toLowerCase();
+    setBusqueda(valorBuscado);
+  
+    let pelisEncontradas = [];
     
- 
+   
+    if (movies) {
+        const pelisEncontradasMovies = movies.filter(elem =>
+            elem.title.toLowerCase().includes(valorBuscado)
+        );
+        pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies];
+    }
+    
+
+    if (movies1) {
+        const pelisEncontradasMovies1 = movies1.filter(elem =>
+            elem.title.toLowerCase().includes(valorBuscado)
+        );
+        pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies1];
+    }
+
+  
+    setPeliculasEncontradas(pelisEncontradas);
+})
+
     return (
     <div>
       <Navbar/>
+
+      <form>
+        <input type='text'
+        name='Buscar'
+        autoComplete='off'
+        value={busqueda}
+        onChange={handleBuscador}
+        placeholder='Busca tu pelicula'
+        />
+      </form>
        
       <ul className='list'>
-        {movies && movies.map( elemento => {
+      {peliculasEncontradas.length > 0
+                ? peliculasEncontradas.map((elemento) => (
+                      <li key={elemento.id} className='item'>
+                          <div className='contenido'>
+                              <img
+                                  src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
+                                  alt=''
+                              />
+                              <p>{elemento.title}</p>
+                              <div className='buttons'>
+                                  <button className='buttonMg'></button>
+                                  <button className='buttonVisto'></button>
+                              </div>
+                          </div>
+                      </li>
+                  ))
+        : movies && movies.map( elemento => {
            return( 
               <li key={elemento.id} className='item'> 
                   <div className='contenido'>
@@ -82,7 +138,23 @@ import Navbar from '../components/Navbar'
                 </li> )
         })}
 
-        {movies1 && movies1.map( elemento => {
+        {peliculasEncontradas.length > 0
+                ? peliculasEncontradas.map((elemento) => (
+                      <li key={elemento.id} className='item'>
+                          <div className='contenido'>
+                              <img
+                                  src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
+                                  alt=''
+                              />
+                              <p>{elemento.title}</p>
+                              <div className='buttons'>
+                                  <button className='buttonMg'></button>
+                                  <button className='buttonVisto'></button>
+                              </div>
+                          </div>
+                      </li>
+                  ))
+        :movies1 && movies1.map( elemento => {
                   return( 
                       <li key={elemento.id} className='item'> 
                           <div className='contenido'>
