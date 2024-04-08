@@ -42,9 +42,18 @@ import axios from 'axios'
     return (
     <div>
        
-      <ul>
+      <ul className='list'>
         {movies && movies.map( elemento => {
-           return( <li key={elemento.id}> <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> <p>{elemento.title}</p></li> )
+           return( 
+              <li key={elemento.id} className='item'> 
+                  <div className='contenido'>
+                      <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                      <div className='cuadro'>
+                      <p>{elemento.title}</p>
+                      </div>
+                     
+                  </div>
+                </li> )
         })}
       </ul>
     </div>
