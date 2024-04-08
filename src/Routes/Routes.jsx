@@ -18,6 +18,7 @@ function Routes() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/private" element={<IsPrivate><PrivateView/></IsPrivate>}/>
                 <Route path="*" element={<ErrorPage />} />
+                
             </Routes>
         </Toaster>
     </div>
