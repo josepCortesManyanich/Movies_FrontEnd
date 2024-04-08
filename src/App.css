@@ -27,6 +27,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .menu {
@@ -67,7 +69,6 @@ body {
 
 .menu li:last-child {
   margin-right: 0;
-  /* Elimina el margen derecho del último elemento */
 }
 
 
@@ -95,7 +96,8 @@ body {
   width: 1400px;
   background-color: #080808;
   padding: 20px;
-  border-radius: 0 40px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 
@@ -193,9 +195,14 @@ body {
 }
 
 .formulario1-input {
-  width: 85%;
+  width: 95%;
   height: 40px;
   border-radius: 35px;
+  font-size: 25px;
+  color: #000;
+  font-weight: bold;
+  margin-left: 15px;
+  padding-left: 45px;
 
 }
 
