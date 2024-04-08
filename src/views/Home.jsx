@@ -8,7 +8,7 @@ import Movies from './Movies';
 export default function Home() {
 
   const handleSign = (() => {
-    <Link to ='/Signup'/>
+    <Link to ='/Signup' elem={Signup}/>
   })
 
   return (

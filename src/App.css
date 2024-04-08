@@ -47,6 +47,58 @@ body {
   padding: 2px;
 }
 
+/*estilos home*/
+
+home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.welcome-section h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+.welcome-section h2 {
+  font-size: 32px;
+  color: #666;
+}
+
+.login-section {
+  margin-top: 50px;
+}
+
+.signup-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.seccion-signup p {
+  font-size: 18px;
+  color: #333;
+}
+
+.seccion-signup button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.seccion-signup button:hover {
+  background-color: #0056b3;
+}
+
 /*estilos de las listas de las peliculas y series*/
 .list {
   display: flex;
