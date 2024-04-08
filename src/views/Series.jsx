@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import Navbar from '../components/Navbar'
 
  export default function Series() {
     
@@ -54,8 +55,10 @@ import axios from 'axios'
   
   
   
+
     return (
     <div>
+        <Navbar/>
         <ul className='list'>
         {series && series.map( elemento => {
            return( 

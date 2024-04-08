@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import Navbar from '../components/Navbar'
 
 
 
@@ -64,6 +65,7 @@ import axios from 'axios'
  
     return (
     <div>
+      <Navbar/>
        
       <ul className='list'>
         {movies && movies.map( elemento => {

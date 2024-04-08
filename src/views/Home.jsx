@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import Movies from './Movies';
 
+
 export default function Home() {
 
   const handleSign = (() => {
@@ -13,6 +14,7 @@ export default function Home() {
 
   return (
     <>
+    
      <><Navbar/></>
     <div className='contenedor-home'>
      
