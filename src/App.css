@@ -187,6 +187,17 @@ body {
 
 }
 
+/*Barra busqueda pelis y series*/
+.formulario1 {
+  margin: 20px;
+}
+
+.formulario1-input {
+  width: 85%;
+  height: 40px;
+  border-radius: 35px;
+
+}
 
 /*estilos de las listas de las peliculas y series*/
 .list {

@@ -97,8 +97,10 @@ const handleBuscador = ((e) =>{
     <div>
       <Navbar/>
 
-      <form>
-        <input type='text'
+      <form className='formulario1'>
+        <input
+        className='formulario1-input' 
+        type='text'
         name='Buscar'
         autoComplete='off'
         value={busqueda}
