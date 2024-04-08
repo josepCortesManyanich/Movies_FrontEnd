@@ -54,6 +54,7 @@ body {
   flex-wrap: wrap;
   padding: 5px;
   list-style: none;
+
 }
 
 .item {
@@ -66,6 +67,7 @@ body {
   /* Color de fondo del cuadro */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   min-height: 200px;
+  margin-bottom: 10px;
 }
 
 .contenido {
@@ -103,7 +105,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
 .buttons button {
@@ -124,9 +127,6 @@ body {
   background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712547474/heart-emoji_dqip4t.png');
   background-size: 100%
 }
-
-
-
 
 .buttonVisto {
   width: 50px;
