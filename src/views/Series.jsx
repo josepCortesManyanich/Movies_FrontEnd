@@ -7,6 +7,8 @@ import Navbar from '../components/Navbar'
     
     const[series, setSeries] = useState(null)
     const[series1, setSeries1] = useState(null)
+    const [busqueda, setBusqueda] = useState('')
+    const [seriesEncontradas, setSeriesEncontradas] = useState([]);
 
     useEffect (() => {
         const data = async () => {
@@ -51,6 +53,32 @@ import Navbar from '../components/Navbar'
         }
         data1()
     },[])
+
+    const handleBuscador = ((e) =>{
+        const valorBuscado = e.target.value.toLowerCase();
+          setBusqueda(valorBuscado);
+        
+          let seriesEncontradas = [];
+          
+         
+          if (series) {
+              const seriesEncontradasSeries = series.filter(elem =>
+                  elem.name.toLowerCase().includes(valorBuscado)
+              );
+              seriesEncontradas = [...seriesEncontradas, ...seriesEncontradasSeries];
+          }
+          
+      
+          if (series1) {
+              const seriesEncontradasSeries1 = series1.filter(elem =>
+                  elem.name.toLowerCase().includes(valorBuscado)
+              );
+             seriesEncontradas = [...seriesEncontradas, ...seriesEncontradasSeries1];
+          }
+      
+          setSeriesEncontradas(seriesEncontradas);
+          
+      })
   
   
   
@@ -59,8 +87,33 @@ import Navbar from '../components/Navbar'
     return (
     <div>
         <Navbar/>
+        <form className='formulario1'>
+            <input
+            className='formulario1-input' 
+            type='text'
+            name='Buscar'
+            autoComplete='off'
+            value={busqueda}
+            onChange={handleBuscador}
+            placeholder='Busca tu serie'
+            />
+        </form>
+
         <ul className='list'>
-        {series && series.map( elemento => {
+         {seriesEncontradas.length > 0 ? seriesEncontradas.map( elemento => {
+           return( 
+              <li key={elemento.id} className='item'> 
+                  <div className='contenido'>
+                      <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                      <p>{elemento.name}</p>
+                        <div className='buttons'>
+                            <button className='buttonMg'></button>
+                            <button className='buttonVisto'></button>
+                         </div>
+                  </div>
+                </li> )}
+        )  
+        :series && series.map( elemento => {
            return( 
               <li key={elemento.id} className='item'> 
                   <div className='contenido'>
@@ -74,7 +127,7 @@ import Navbar from '../components/Navbar'
                 </li> )
         })}
 
-        {series1 && series1.map( elemento => {
+        {seriesEncontradas.length > 0 ? seriesEncontradas.map( elemento => {
                 return( 
                     <li key={elemento.id} className='item'> 
                         <div className='contenido'>
@@ -85,7 +138,20 @@ import Navbar from '../components/Navbar'
                                     <button className='buttonVisto'></button>
                                 </div>
                         </div>
-                        </li> )
+                        </li> )}
+                ) 
+                :series1 && series1.map( elemento => {
+                        return( 
+                            <li key={elemento.id} className='item'> 
+                                <div className='contenido'>
+                                    <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                                    <p>{elemento.name}</p>
+                                        <div className='buttons'>
+                                            <button className='buttonMg'></button>
+                                            <button className='buttonVisto'></button>
+                                        </div>
+                                </div>
+                                </li> )
                 })}
         </ul>
 
