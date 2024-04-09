@@ -289,7 +289,7 @@ body {
 
 .contenido1 img {
   width: 65%;
-  height: auto;
+  height: 85%;
   margin-bottom: 10px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -319,9 +319,19 @@ body {
 
 }
 
-.contenido2 p {
+.contenido2 h4 {
   font-family: Arial, sans-serif;
   font-size: 30px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #f7f4f4;
+  margin: 25px;
+  padding: 10px;
+}
+
+.contenido2 p {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
   font-weight: bold;
   line-height: 1.5;
   color: #f7f4f4;
@@ -332,15 +342,16 @@ body {
 .lista-genero {
   list-style: none;
   padding: 0;
+  margin-bottom: 15px;
 }
 
 .item-genero {
   font-family: Arial, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   line-height: 1.5;
   color: #f7f4f4;
-  margin: 0 auto;
+  margin-bottom: 15px;
   padding: 10px;
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
+import { Link } from 'react-router-dom'
 
  export default function Series() {
     
@@ -103,33 +104,7 @@ import Navbar from '../components/Navbar'
          {seriesEncontradas.length > 0 ? seriesEncontradas.map( elemento => {
            return( 
               <li key={elemento.id} className='item'> 
-                  <div className='contenido'>
-                      <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                      <p>{elemento.name}</p>
-                        <div className='buttons'>
-                            <button className='buttonMg'></button>
-                            <button className='buttonVisto'></button>
-                         </div>
-                  </div>
-                </li> )}
-        )  
-        :series && series.map( elemento => {
-           return( 
-              <li key={elemento.id} className='item'> 
-                  <div className='contenido'>
-                      <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                      <p>{elemento.name}</p>
-                        <div className='buttons'>
-                            <button className='buttonMg'></button>
-                            <button className='buttonVisto'></button>
-                         </div>
-                  </div>
-                </li> )
-        })}
-
-        {seriesEncontradas.length > 0 ? seriesEncontradas.map( elemento => {
-                return( 
-                    <li key={elemento.id} className='item'> 
+                    <Link to={`/series/${elemento.id}`}>
                         <div className='contenido'>
                             <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
                             <p>{elemento.name}</p>
@@ -138,20 +113,54 @@ import Navbar from '../components/Navbar'
                                     <button className='buttonVisto'></button>
                                 </div>
                         </div>
+                        </Link>
+                </li> )}
+        )  
+        :series && series.map( elemento => {
+           return( 
+              <li key={elemento.id} className='item'> 
+                    <Link to={`/series/${elemento.id}`}>
+                        <div className='contenido'>
+                            <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                            <p>{elemento.name}</p>
+                                <div className='buttons'>
+                                    <button className='buttonMg'></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                        </div>
+                        </Link>   
+                </li> )
+        })}
+
+        {seriesEncontradas.length > 0 ? seriesEncontradas.map( elemento => {
+                return( 
+                    <li key={elemento.id} className='item'> 
+                        <Link to={`/series/${elemento.id}`}>
+                            <div className='contenido'>
+                                <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                                <p>{elemento.name}</p>
+                                    <div className='buttons'>
+                                        <button className='buttonMg'></button>
+                                        <button className='buttonVisto'></button>
+                                    </div>
+                            </div>
+                        </Link>   
                         </li> )}
                 ) 
                 :series1 && series1.map( elemento => {
                         return( 
                             <li key={elemento.id} className='item'> 
-                                <div className='contenido'>
-                                    <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                                    <p>{elemento.name}</p>
-                                        <div className='buttons'>
-                                            <button className='buttonMg'></button>
-                                            <button className='buttonVisto'></button>
+                                    <Link to={`/series/${elemento.id}`}>
+                                        <div className='contenido'>
+                                            <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                                            <p>{elemento.name}</p>
+                                                <div className='buttons'>
+                                                    <button className='buttonMg'></button>
+                                                    <button className='buttonVisto'></button>
+                                                </div>
                                         </div>
-                                </div>
-                                </li> )
+                                    </Link>    
+                            </li> )
                 })}
         </ul>
 

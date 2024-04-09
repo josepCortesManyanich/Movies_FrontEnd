@@ -2,13 +2,12 @@ import './App.css';
 
 import { Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
-import Navbar from './components/Navbar';
 import ErrorPage from './views/ErrorPage';
-import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import Movies from './views/Movies';
 import Series from './views/Series';
 import MoviesDetail from './views/MoviesDetail';
+import SeriesDetail from './views/SeriesDetail';
 
 
 
@@ -23,6 +22,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="*" element={<ErrorPage />} />
                 <Route path="/peliculas/:id" element={<MoviesDetail/>}/>
+                <Route path="/series/:id" element={<SeriesDetail/>}/>
         </Routes>
        
        

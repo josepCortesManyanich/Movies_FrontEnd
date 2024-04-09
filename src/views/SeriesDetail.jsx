@@ -5,14 +5,14 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
 
- export default function MoviesDetail({match}) {
-    const{id} = useParams();
-  const [movieDetail, setDetail] = useState(null)
+ export default function SeriesDetail({match}) {
+const{id} = useParams();
+const [serieDetail, setDetail] = useState(null)
 
   useEffect (() =>{
     const data =  async () =>{
         try {
-            const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}`,{
+            const response = await axios.get(`https://api.themoviedb.org/3/tv/${id}`,{
                 params: {
                 language: 'en-US',
                 },
@@ -29,30 +29,28 @@ import Navbar from '../components/Navbar'
     }
     data()
   },[id])
-  
-  
-  
+
   return (
     <div>
     <Navbar/>
     <div className='detalle'>
         
-         {movieDetail && 
-                <li key={movieDetail.id} className='item1'>
+         {serieDetail && 
+                <li key={serieDetail.id} className='item1'>
                     <div  className='contenido1'>
-                    <img   src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`} alt="" /> 
-                      <p>{movieDetail.title}</p>
+                    <img   src={`https://image.tmdb.org/t/p/w500/${serieDetail.poster_path}`} alt="" /> 
+                      <p>{serieDetail.name}</p>
                     </div>
                     <div className='contenido2'>
                         <h4>Año de estreno: </h4> 
-                        <p> {movieDetail.release_date}</p>
+                        <p> {serieDetail.first_air_date}</p>
                         <h4>Descripción: </h4> 
-                        <p>{movieDetail.overview}</p>
-                        {movieDetail.genres && (
+                       <p>{serieDetail.overview}</p>
+                        {serieDetail.genres && (
                             <div className='contenido2'>
                                 <h4>Genero:</h4>
                                 <ul className='lista-genero'>
-                                    {movieDetail.genres.map(elemento => (
+                                    {serieDetail.genres.map(elemento => (
                                         <li key={elemento.id} className='item-genero'>{elemento.name}</li>
                                     ))}
                                 </ul>
@@ -72,6 +70,3 @@ import Navbar from '../components/Navbar'
     </div>
   )
 }
-
-
-
