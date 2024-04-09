@@ -39,7 +39,6 @@ body {
 }
 
 
-
 .menu ul {
   list-style-type: none;
   padding: 0;
@@ -255,6 +254,96 @@ body {
   padding: 10px;
 }
 
+/*Detalles pelicula*/
+.detalle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 25px;
+
+}
+
+
+
+.item1 {
+  list-style-type: none;
+  margin: 20px;
+  padding: 20px;
+  height: 85%;
+  border: 1px solid #070707;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background-color: #030303;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-grow: 1;
+}
+
+.contenido1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.contenido1 img {
+  width: 65%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contenido1 p {
+  font-family: Arial, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #f7f4f4;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.contenido1,
+.contenido2 {
+  flex: 1;
+}
+
+.contenido2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.contenido2 p {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #f7f4f4;
+  margin: 25px;
+  padding: 10px;
+}
+
+.lista-genero {
+  list-style: none;
+  padding: 0;
+}
+
+.item-genero {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #f7f4f4;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 /* BOTONES DE FAVORITOS Y DE VISTO */
 
 .buttons {
@@ -286,6 +375,42 @@ body {
 
 .buttonVisto {
   width: 50px;
+  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712546515/ojo-removebg-preview_1_ths424.png');
+  background-size: 100%;
+}
+
+/*Botones de perfil pelicula*/
+
+.buttons1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.buttons1 button {
+  width: 100px;
+  height: 85px;
+  padding: 2px 24px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #000;
+  background-size: cover;
+}
+
+
+.buttonMg1 {
+  width: 50px;
+  margin-right: 50px;
+  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712547474/heart-emoji_dqip4t.png');
+  background-size: 100%
+}
+
+.buttonVisto1 {
+  width: 50px;
+  margin-left: 50px;
   background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712546515/ojo-removebg-preview_1_ths424.png');
   background-size: 100%;
 }
