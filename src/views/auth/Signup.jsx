@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../../components/Navbar';
 
 export default function Signup() {
   const [user, setUser] = useState({
     username: '',
-    email: ''
+    email: '',
+    cumpleaños:'',
+    imagen: '',
   })
   const [password, setPassword] = useState('');
   const [passwordControl, setPasswordControl] = useState('');
@@ -33,7 +36,8 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, { username: user.username, email: user.email, password });
+      await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, { username: user.username, email: user.email, password,
+      cumpleaños: user.cumple, imagen: user.image });
       navigate('/login');
     } catch (error) {
       setErrorMessage(error.response.data.error)
@@ -41,19 +45,36 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+    <Navbar/>
+    
+    <div className='contenedor-signup'>
+    <br/>
+      
+      <form onSubmit={handleSubmit} className='formulario-signup'>
+        <br />
         <label>Username</label>
         <input required type="text" name="username" value={user.username} onChange={handleChange} />
+        <br/>
         <label>Email</label>
         <input required type="email" name="email" value={user.email} onChange={handleChange} />
+        <br/>
+        <label>Cumpleaños</label>
+        <input required type="text" name="cumpleaños" value={user.cumple} onChange={handleChange} />
+        <br/>
+        <label>Foto de perfil</label>
+        <input required type="file" name="foto" value={user.image} onChange={handleChange} />
+        <br/>
         <label>Password</label>
         <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
+        <br/>
         <label>Repeat the password</label>
         <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
+        <br/>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Register</button>
+        <button type="submit">Registrar</button>
       </form>
     </div>
+    </>
   )
 }

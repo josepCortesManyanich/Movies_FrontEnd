@@ -1,16 +1,13 @@
 import React from 'react'
 import Login from './auth/Login'
-import Signup from './auth/Signup'
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
-import Movies from './Movies';
+
 
 
 export default function Home() {
 
-  const handleSign = (() => {
-    <Link to ='/Signup' elem={Signup}/>
-  })
+
 
   return (
     <>
@@ -33,8 +30,9 @@ export default function Home() {
 
       <div className='seccion-signup'>
         <p>¿Aún no estas registrado?</p>
-        <button onClick={handleSign}>REGISTRO</button>
-       
+        <Link to='/signup'>
+        <button>REGISTRO</button>
+        </Link>
       </div>
     
       

@@ -143,6 +143,7 @@ body {
   color: #fff;
   font-size: 25px;
   font-weight: bold;
+  cursor: pointer;
 
 }
 
@@ -174,6 +175,56 @@ body {
 
 
 .formulario button[type="submit"] {
+  width: 98%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0800;
+  color: #f5f2f2;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+/*estilos formulario signup*/
+.contenedor-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.formulario-signup {
+  width: 800px;
+  height: 650px;
+  background-color: #050505;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-signup label {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #f7f4f4;
+}
+
+.formulario-signup input[type="email"],
+.formulario-signup input[type="password"],
+.formulario-signup input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+
+.formulario-signup button[type="submit"] {
   width: 98%;
   margin-top: 20px;
   padding: 10px 20px;
