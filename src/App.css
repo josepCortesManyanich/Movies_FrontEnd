@@ -12,6 +12,9 @@ body {
   background-size: 100%;
 }
 
+.selected {
+  color: red;
+}
 
 /*estilos navbar*/
 
@@ -485,210 +488,6 @@ body {
     min-height: 600px;
   }
 
-  /* Estilos del menú */
-  .menu {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-  }
-
-  .menu ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  .menu li {
-    margin-right: 40px;
-    padding: 40px;
-    color: #f00505;
-  }
-
-  .menu li a {
-    font-size: 20px;
-    color: #f80505;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .menu li:first-child {
-    margin-left: 15px;
-  }
-
-  .menu li:last-child {
-    margin-right: 0;
-  }
-
-  .contenedor-home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: 100%;
-  }
-
-  /* Estilos de la sección de bienvenida */
-  .bienvenida,
-  .bienvenida1 {
-    width: 90%;
-    background-color: #080808;
-    padding: 20px;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  .bienvenida h3 {
-    font-size: 40px;
-    color: #f00505;
-  }
-
-  .bienvenida1 h2 {
-    font-size: 24px;
-    color: #f30303;
-  }
-
-  /* Estilos de la sección de inicio de sesión */
-  .seccion-login {
-    margin-top: 40px;
-  }
-
-  /* Estilos de la sección de registro */
-  .seccion-signup {
-    width: 90%;
-    margin-bottom: 25px;
-    background-color: #080808;
-    padding: 20px;
-    border-radius: 0 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  .seccion-signup p {
-    font-size: 24px;
-    color: hsl(0, 9%, 96%);
-  }
-
-  .seccion-signup button {
-    width: 35%;
-    height: 45px;
-    padding: 10px 20px;
-    border: none;
-    margin-bottom: 20px;
-    border-radius: 25px;
-    background-color: #ff1100;
-    color: #fff;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  /* Estilos del formulario de inicio de sesión */
-  .formulario {
-    width: 90%;
-    height: 200px;
-    background-color: #080808;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .formulario label {
-    display: flex;
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #f7f4f4;
-  }
-
-  .formulario input[type="email"],
-  .formulario input[type="password"] {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-  }
-
-  .formulario button[type="submit"] {
-    width: 98%;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff0800;
-    color: #f5f2f2;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  /* Estilos del formulario de registro */
-  .contenedor-signup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    padding-top: 50px;
-  }
-
-  .formulario-signup {
-    width: 90%;
-    height: 450px;
-    background-color: #080808;
-    padding: 20px;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .formulario-signup label {
-    display: flex;
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #f7f4f4;
-  }
-
-  .formulario-signup input[type="email"],
-  .formulario-signup input[type="password"],
-  .formulario-signup input[type="text"] {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-  }
-
-  .formulario-signup button[type="submit"] {
-    width: 98%;
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff0800;
-    color: #f5f2f2;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  /* Estilos de la barra de búsqueda de películas y series */
-  .formulario1 {
-    margin: 20px;
-  }
-
-  .formulario1-input {
-    width: 95%;
-    height: 40px;
-    border-radius: 50px;
-    font-size: 20px;
-    color: #000;
-    font-weight: bold;
-    margin-left: 15px;
-    padding-left: 45px;
-  }
-
-
-
   .list {
     padding: 2px;
   }
@@ -724,167 +523,73 @@ body {
   .buttonVisto {
     width: 40px;
   }
-}
 
-.detalle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
+  /*detalles series peliculas*/
+  .detalle {
+    padding: 2px;
+  }
 
-.item1 {
-  list-style-type: none;
-  margin: 20px;
-  padding: 20px;
-  height: 85%;
-  border: 1px solid #070707;
-  border-radius: 55px;
-  background-color: #030303;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-grow: 1;
-}
+  .item1 {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
 
-.contenido1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25px;
-}
+  .contenido1,
+  .contenido2 {
+    width: 100%;
+  }
 
-.contenido1 img {
-  width: 100%;
-  height: 65%;
-  margin-bottom: 10px;
-  border-radius: 25px;
-  object-fit: cover;
-}
+  .contenido1,
+  .contenido2 {
+    max-width: 180px;
+    height: 400px;
+  }
 
-.contenido1 p {
-  font-family: Arial, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin: 0 auto;
-  padding: 10px;
-  margin-top: 30px;
-}
+  .contenido1 img {
+    max-width: 180px;
+  }
 
-.contenido1,
-.contenido2 {
-  flex: 1;
-}
+  .contenido1 p {
+    font-size: 14px;
+    padding: 8px;
+  }
 
-.contenido2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .contenido2 h4 {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #f7f4f4;
+    margin: 15px;
+    padding: 8px;
+  }
 
-.contenido2 h4 {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin: 25px;
-  padding: 10px;
-}
+  .contenido2 p {
+    font-size: 14px;
+    padding: 8px
+  }
 
-.contenido2 p {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin: 25px;
-  padding: 10px;
-}
+  .lista-genero {
+    font-size: 14px;
+    padding: 8px
+  }
 
-.lista-genero {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
-}
+  .item-genero {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
 
-.item-genero {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin-bottom: 15px;
-  padding: 10px;
-}
+  .buttons1 button {
+    width: 20px;
+    height: 30px;
+    padding: 2px 20px;
+    margin: 0 8px;
+  }
 
-/* Estilos de los botones de favoritos y vistos */
-.buttons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
+  .buttonMg1,
+  .buttonVisto1 {
+    width: 40px;
+  }
 
-.buttons button {
-  width: 25px;
-  height: 40px;
-  padding: 2px 24px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  background-color: #000;
-  background-size: cover;
-}
 
-.buttonMg {
-  width: 50px;
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712547474/heart-emoji_dqip4t.png');
-  background-size: 100%;
-}
-
-.buttonVisto {
-  width: 50px;
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712546515/ojo-removebg-preview_1_ths424.png');
-  background-size: 100%;
-}
-
-/* Estilos de los botones de perfil de película */
-.buttons1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  justify-content: center;
-}
-
-.buttons1 button {
-  width: 100px;
-  height: 85px;
-  padding: 2px 24px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  background-color: #000;
-  background-size: cover;
-}
-
-.buttonMg1 {
-  width: 50px;
-  margin-right: 50px;
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712547474/heart-emoji_dqip4t.png');
-  background-size: 100%;
-}
-
-.buttonVisto1 {
-  width: 50px;
-  margin-left: 50px;
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712546515/ojo-removebg-preview_1_ths424.png');
-  background-size: 100%;
 }
