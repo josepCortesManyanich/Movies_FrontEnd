@@ -149,7 +149,7 @@ const handleBuscador = ((e) =>{
         {peliculasEncontradas.length > 0
                 ? peliculasEncontradas.map((elemento) => (
                       <li key={elemento.id} className='item'>
-                        <Link to={`/movie/${elemento.id}`}>
+                        <Link to={`/peliculas/${elemento.id}`}>
                           <div className='contenido'>
                               <img
                                   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
@@ -167,7 +167,7 @@ const handleBuscador = ((e) =>{
         :movies1 && movies1.map( elemento => {
                   return( 
                     <li key={elemento.id} className='item'> 
-                      <Link to={`/movie/${elemento.id}`}>
+                      <Link to={`/peliculas/${elemento.id}`}>
                           <div className='contenido'>
                               <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
                               <p>{elemento.title}</p>
