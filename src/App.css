@@ -27,8 +27,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 55px;
+  border-bottom-right-radius: 55px;
 }
 
 .menu {
@@ -86,7 +86,6 @@ body {
   width: 1400px;
   background-color: #050505;
   padding: 20px;
-  border-radius: 0px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 
@@ -96,8 +95,8 @@ body {
   width: 1400px;
   background-color: #080808;
   padding: 20px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 95px;
+  border-bottom-right-radius: 95px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 
@@ -197,7 +196,7 @@ body {
 .formulario1-input {
   width: 95%;
   height: 40px;
-  border-radius: 35px;
+  border-radius: 50px;
   font-size: 25px;
   color: #000;
   font-weight: bold;
