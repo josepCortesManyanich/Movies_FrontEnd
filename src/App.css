@@ -526,12 +526,16 @@ body {
 
   /*detalles series peliculas*/
   .detalle {
-    padding: 2px;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+
   }
 
   .item1 {
-    padding: 8px;
-    margin-bottom: 8px;
+    width: 100%;
+    margin: 10px 0;
+    height: 750px;
   }
 
   .contenido1,
@@ -541,12 +545,12 @@ body {
 
   .contenido1,
   .contenido2 {
-    max-width: 180px;
+    max-width: 250px;
     height: 400px;
   }
 
   .contenido1 img {
-    max-width: 180px;
+    max-width: 250px;
   }
 
   .contenido1 p {
@@ -565,13 +569,24 @@ body {
   }
 
   .contenido2 p {
-    font-size: 14px;
-    padding: 8px
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #f7f4f4;
+    margin: 15px;
+    padding: 8px;
   }
 
   .lista-genero {
-    font-size: 14px;
-    padding: 8px
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #f7f4f4;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
   }
 
   .item-genero {
@@ -579,16 +594,29 @@ body {
     padding: 10px;
   }
 
+  .buttons1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
   .buttons1 button {
-    width: 20px;
-    height: 30px;
-    padding: 2px 20px;
-    margin: 0 8px;
+    width: 100px;
+    height: 85px;
+    padding: 2px 24px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #000;
+    background-size: cover;
   }
 
   .buttonMg1,
   .buttonVisto1 {
-    width: 40px;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    background-size: contain;
   }
 
 
