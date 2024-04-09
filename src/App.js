@@ -6,10 +6,9 @@ import Navbar from './components/Navbar';
 import ErrorPage from './views/ErrorPage';
 import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
-import PrivateView from './views/PrivateView';
-import IsPrivate from './components/IsPrivate';
 import Movies from './views/Movies';
 import Series from './views/Series';
+import MoviesDetail from './views/MoviesDetail';
 
 
 
@@ -23,6 +22,7 @@ function App() {
                 <Route path="/series" element={<Series/>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="*" element={<ErrorPage />} />
+                <Route path="/peliculas/:id" element={<MoviesDetail/>}/>
         </Routes>
        
        

@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -12,14 +14,14 @@ import Navbar from '../components/Navbar'
 
  export default function Movies() {
     
-    /* el use State es declarado null ya que va a recibir los datos de forma asíncrona*/ 
+   
     const [movies , setMovies] = useState(null)
     const [movies1, setMovies1] = useState(null)
     const [busqueda, setBusqueda] = useState('')
     const [peliculasEncontradas, setPeliculasEncontradas] = useState([]);
    
 
-   /* este hook es para cargar las imagenes de la base de datos cuando nos ponemos en la vist */
+  
    
    useEffect (() => {
         const data = async () => {
@@ -113,6 +115,7 @@ const handleBuscador = ((e) =>{
       {peliculasEncontradas.length > 0
                 ? peliculasEncontradas.map((elemento) => (
                       <li key={elemento.id} className='item'>
+                      <Link to={`/peliculas/${elemento.id}`}>
                           <div className='contenido'>
                               <img
                                   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
@@ -124,11 +127,13 @@ const handleBuscador = ((e) =>{
                                   <button className='buttonVisto'></button>
                               </div>
                           </div>
+                        </Link>
                       </li>
                   ))
         : movies && movies.map( elemento => {
            return( 
               <li key={elemento.id} className='item'> 
+                <Link to={`/peliculas/${elemento.id}`}>
                   <div className='contenido'>
                       <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
                       <p>{elemento.title}</p>
@@ -137,12 +142,14 @@ const handleBuscador = ((e) =>{
                             <button className='buttonVisto'></button>
                          </div>
                   </div>
-                </li> )
+                </Link>
+              </li> )
         })}
 
         {peliculasEncontradas.length > 0
                 ? peliculasEncontradas.map((elemento) => (
                       <li key={elemento.id} className='item'>
+                        <Link to={`/movie/${elemento.id}`}>
                           <div className='contenido'>
                               <img
                                   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
@@ -154,11 +161,13 @@ const handleBuscador = ((e) =>{
                                   <button className='buttonVisto'></button>
                               </div>
                           </div>
+                          </Link>
                       </li>
                   ))
         :movies1 && movies1.map( elemento => {
                   return( 
-                      <li key={elemento.id} className='item'> 
+                    <li key={elemento.id} className='item'> 
+                      <Link to={`/movie/${elemento.id}`}>
                           <div className='contenido'>
                               <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
                               <p>{elemento.title}</p>
@@ -167,7 +176,8 @@ const handleBuscador = ((e) =>{
                                   <button className='buttonVisto'></button>
                                 </div>
                           </div>
-                        </li> )
+                        </Link>
+                      </li> )
                 })}
       </ul>
     </div>
