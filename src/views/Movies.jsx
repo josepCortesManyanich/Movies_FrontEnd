@@ -19,7 +19,9 @@ import { Link } from 'react-router-dom'
     const [movies1, setMovies1] = useState(null)
     const [movies2, setMovies2] = useState(null)
     const [movies3, setMovies3] =useState(null)
-    const[movies4,setMovies4] = useState(null)
+    const [movies4, setMovies4] = useState(null)
+    const[movies5,setMovies5] = useState(null)
+    const[movies6, setMovies6] = useState(null)
     const [busqueda, setBusqueda] = useState('')
     const [peliculasEncontradas, setPeliculasEncontradas] = useState([]);
    
@@ -90,7 +92,11 @@ useEffect(() => {
       const searchTerm= 'movie'; 
       const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
       const searchTerm1= 'movies'; 
-      const url1 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
+      const url1 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm1)}`;
+      const searchTerm2= 'drama'; 
+      const url2 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm2)}`;
+      const searchTerm3= 'comedy'; 
+      const url3 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm3)}`;
 
       const options = {
           method: 'GET',
@@ -100,6 +106,15 @@ useEffect(() => {
         method: 'GET',
         url: url1
     };
+    const options2= {
+        method: 'GET',
+        url: url2
+    };
+    const options3= {
+        method: 'GET',
+        url: url3
+    };
+    
 
       try {
           const response = await axios(options);
@@ -108,6 +123,13 @@ useEffect(() => {
           const response1 = await axios(options1)
           setMovies4(response1.data.Search)
           console.log(response.data)
+          const response3 = await axios(options2)
+          setMovies5(response3.data.Search)
+          console.log(response3.data)
+          const response4 = await axios(options3)
+          
+          setMovies6(response4.data.Search)
+          console.log(response4.data)
       } 
       
       catch (error) {
@@ -161,6 +183,18 @@ const handleBuscador = ((e) =>{
        );
       pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies4];
     }
+    if(movies5){
+        const pelisEncontradasMovies5 = movies4.filter(elem =>
+          elem.title.toLowerCase().includes(valorBuscado)
+         );
+        pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies5];
+      }
+      if(movies6){
+        const pelisEncontradasMovies6 = movies4.filter(elem =>
+          elem.title.toLowerCase().includes(valorBuscado)
+         );
+        pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies6];
+      }
 
   
     setPeliculasEncontradas(pelisEncontradas);
@@ -267,7 +301,7 @@ return(
         </li>
     ))
     : movies2 && movies2.map(elemento => {
-      console.log('elemento',elemento)  
+     
       return (
             <li key={elemento.imdbID} className='item'>
                 <Link to={`/peliculas/${elemento.imdbID}`}>
@@ -300,7 +334,7 @@ return(
         </li>
     ))
     : movies3 && movies3.map(elemento => {
-      console.log('elemento',elemento)  
+     
       return (
             <li key={elemento.imdbID} className='item'>
                 <Link to={`/peliculas/${elemento.imdbID}`}>
@@ -333,6 +367,72 @@ return(
         </li>
     ))
     : movies4 && movies4.map(elemento => {
+     
+      return (
+            <li key={elemento.imdbID} className='item'>
+                <Link to={`/peliculas/${elemento.imdbID}`}>
+                    <div className='contenido'>
+                        <img src={elemento.Poster} alt="" />
+                        <p>{elemento.Title}</p> 
+                        <div className='buttons'>
+                            <button className='buttonMg'></button>
+                            <button className='buttonVisto'></button>
+                        </div>
+                    </div>
+                </Link>
+            </li>
+        )
+    })
+}
+{peliculasEncontradas.length > 0
+    ? peliculasEncontradas.map((elemento) => (
+        <li key={elemento.imdbID} className='item'>
+            <Link to={`/peliculas/${elemento.imdbID}`}>
+                <div className='contenido'>
+                    <img src={elemento.Poster} alt='' />
+                    <p>{elemento.Title}</p> 
+                    <div className='buttons'>
+                        <button className='buttonMg'></button>
+                        <button className='buttonVisto'></button>
+                    </div>
+                </div>
+            </Link>
+        </li>
+    ))
+    : movies5 && movies5.map(elemento => {
+     
+      return (
+            <li key={elemento.imdbID} className='item'>
+                <Link to={`/peliculas/${elemento.imdbID}`}>
+                    <div className='contenido'>
+                        <img src={elemento.Poster} alt="" />
+                        <p>{elemento.Title}</p> 
+                        <div className='buttons'>
+                            <button className='buttonMg'></button>
+                            <button className='buttonVisto'></button>
+                        </div>
+                    </div>
+                </Link>
+            </li>
+        )
+    })
+}
+{peliculasEncontradas.length > 0
+    ? peliculasEncontradas.map((elemento) => (
+        <li key={elemento.imdbID} className='item'>
+            <Link to={`/peliculas/${elemento.imdbID}`}>
+                <div className='contenido'>
+                    <img src={elemento.Poster} alt='' />
+                    <p>{elemento.Title}</p> 
+                    <div className='buttons'>
+                        <button className='buttonMg'></button>
+                        <button className='buttonVisto'></button>
+                    </div>
+                </div>
+            </Link>
+        </li>
+    ))
+    : movies6 && movies6.map(elemento => {
      
       return (
             <li key={elemento.imdbID} className='item'>
