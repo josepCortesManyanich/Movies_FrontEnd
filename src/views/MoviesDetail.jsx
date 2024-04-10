@@ -33,7 +33,7 @@ import Navbar from '../components/Navbar'
   
   
   return (
-    <div>
+    <div className='maximo'>
     <Navbar/>
     <div className='detalle'>
         

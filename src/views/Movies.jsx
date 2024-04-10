@@ -17,6 +17,9 @@ import { Link } from 'react-router-dom'
    
     const [movies , setMovies] = useState(null)
     const [movies1, setMovies1] = useState(null)
+    const [movies2, setMovies2] = useState(null)
+    const [movies3, setMovies3] =useState(null)
+    const[movies4,setMovies4] = useState(null)
     const [busqueda, setBusqueda] = useState('')
     const [peliculasEncontradas, setPeliculasEncontradas] = useState([]);
    
@@ -33,10 +36,21 @@ import { Link } from 'react-router-dom'
                   Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNDMyNTc0YTQzZTMyZTAwNGFmNWVhMmJjZDU5MjdlZiIsInN1YiI6IjY2MTFhYjgzMTEwOGE4MDE2NDhjN2VlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sVMODQOs97ekq4hGuXhLckNoM4_OM9Fj9yqomyzwcZ4'
                 }
               };
+              const options1 = {
+                method: 'GET',
+                url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+                headers: {
+                  accept: 'application/json',
+                  Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNDMyNTc0YTQzZTMyZTAwNGFmNWVhMmJjZDU5MjdlZiIsInN1YiI6IjY2MTFhYjgzMTEwOGE4MDE2NDhjN2VlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sVMODQOs97ekq4hGuXhLckNoM4_OM9Fj9yqomyzwcZ4'
+                }
+              };
             try {
                 const response =  await axios(options)
                 setMovies(response.data.results)
                 console.log(response.data)
+                const response1 =  await axios(options1)
+                setMovies1(response1.data.results)
+                console.log(response1.data)
             } catch (error) {
                 console.error(error)
             }
@@ -44,28 +58,67 @@ import { Link } from 'react-router-dom'
         data()
 
     }, [])
-  /*Segunda llamada a la api para conseguir mas peliculas */
-    useEffect (() => {
-      const data1 = async () => {
-          const options = {
-              method: 'GET',
-              url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
-              headers: {
-                accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNDMyNTc0YTQzZTMyZTAwNGFmNWVhMmJjZDU5MjdlZiIsInN1YiI6IjY2MTFhYjgzMTEwOGE4MDE2NDhjN2VlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sVMODQOs97ekq4hGuXhLckNoM4_OM9Fj9yqomyzwcZ4'
-              }
-            };
-          try {
-              const response =  await axios(options)
-              setMovies1(response.data.results)
-              console.log(response.data)
-          } catch (error) {
-              console.error(error)
-          }
-      }
-      data1()
 
-  }, [])
+  
+  useEffect(() => {
+    const data2 = async () => {
+        const apiKey = 'ffdce154'; 
+        const searchTerm = 'Action'; 
+        const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
+
+        const options = {
+            method: 'GET',
+            url: url
+        };
+
+        try {
+            const response = await axios(options);
+            setMovies2(response.data.Search);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    data2();
+
+}, []);
+
+useEffect(() => {
+  const data3 = async () => {
+      const apiKey = 'ffdce154'; 
+      const searchTerm= 'movie'; 
+      const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
+      const searchTerm1= 'movies'; 
+      const url1 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
+
+      const options = {
+          method: 'GET',
+          url: url
+      };
+      const options1= {
+        method: 'GET',
+        url: url1
+    };
+
+      try {
+          const response = await axios(options);
+          setMovies3(response.data.Search);
+          console.log(response.data);
+          const response1 = await axios(options1)
+          setMovies4(response1.data.Search)
+          console.log(response.data)
+      } 
+      
+      catch (error) {
+          console.error(error);
+      }
+  };
+
+  data3();
+
+}, []);
+
   
 
   /*Barra de buscador*/
@@ -90,6 +143,24 @@ const handleBuscador = ((e) =>{
         );
         pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies1];
     }
+    if(movies2){
+      const pelisEncontradasMovies2 = movies2.filter(elem =>
+        elem.title.toLowerCase().includes(valorBuscado)
+       );
+      pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies2];
+    }
+    if(movies3){
+      const pelisEncontradasMovies3 = movies3.filter(elem =>
+        elem.title.toLowerCase().includes(valorBuscado)
+       );
+      pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies3];
+    }
+    if(movies4){
+      const pelisEncontradasMovies4 = movies4.filter(elem =>
+        elem.title.toLowerCase().includes(valorBuscado)
+       );
+      pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies4];
+    }
 
   
     setPeliculasEncontradas(pelisEncontradas);
@@ -113,72 +184,172 @@ const handleBuscador = ((e) =>{
        
       <ul className='list'>
       {peliculasEncontradas.length > 0
-                ? peliculasEncontradas.map((elemento) => (
-                      <li key={elemento.id} className='item'>
-                      <Link to={`/peliculas/${elemento.id}`}>
-                          <div className='contenido'>
-                              <img
-                                  src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
-                                  alt=''
-                              />
-                              <p>{elemento.title}</p>
-                              <div className='buttons'>
-                                  <button className='buttonMg'></button>
-                                  <button className='buttonVisto'></button>
-                              </div>
-                          </div>
-                        </Link>
-                      </li>
-                  ))
-        : movies && movies.map( elemento => {
-           return( 
-              <li key={elemento.id} className='item'> 
-                <Link to={`/peliculas/${elemento.id}`}>
-                  <div className='contenido'>
-                      <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                      <p>{elemento.title}</p>
+    ? peliculasEncontradas.map((elemento) => (
+          <li key={elemento.id} className='item'>
+          <Link to={`/peliculas/${elemento.id}`}>
+              <div className='contenido'>
+                  <img
+                      src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
+                      alt=''
+                  />
+                  <p>{elemento.title}</p>
+                  <div className='buttons'>
+                      <button className='buttonMg'></button>
+                      <button className='buttonVisto'></button>
+                  </div>
+              </div>
+            </Link>
+          </li>
+      ))
+: movies && movies.map( elemento => {
+return( 
+  <li key={elemento.id} className='item'> 
+    <Link to={`/peliculas/${elemento.id}`}>
+      <div className='contenido'>
+          <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+          <p>{elemento.title}</p>
+            <div className='buttons'>
+                <button className='buttonMg'></button>
+                <button className='buttonVisto'></button>
+             </div>
+      </div>
+    </Link>
+  </li> )
+})}
+
+{peliculasEncontradas.length > 0
+    ? peliculasEncontradas.map((elemento) => (
+          <li key={elemento.id} className='item'>
+            <Link to={`/peliculas/${elemento.id}`}>
+              <div className='contenido'>
+                  <img
+                      src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
+                      alt=''
+                  />
+                  <p>{elemento.title}</p>
+                  <div className='buttons'>
+                      <button className='buttonMg'></button>
+                      <button className='buttonVisto'></button>
+                  </div>
+              </div>
+              </Link>
+          </li>
+      ))
+:movies1 && movies1.map( elemento => {
+      return( 
+        <li key={elemento.id} className='item'> 
+          <Link to={`/peliculas/${elemento.id}`}>
+              <div className='contenido'>
+                  <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
+                  <p>{elemento.title}</p>
+                    <div className='buttons'>
+                      <button className='buttonMg'></button>
+                      <button className='buttonVisto'></button>
+                    </div>
+              </div>
+            </Link>
+          </li> )
+    })}
+
+{peliculasEncontradas.length > 0
+    ? peliculasEncontradas.map((elemento) => (
+        <li key={elemento.imdbID} className='item'>
+            <Link to={`/peliculas/${elemento.imdbID}`}>
+                <div className='contenido'>
+                    <img src={elemento.Poster} alt='' />
+                    <p>{elemento.Title}</p> 
+                    <div className='buttons'>
+                        <button className='buttonMg'></button>
+                        <button className='buttonVisto'></button>
+                    </div>
+                </div>
+            </Link>
+        </li>
+    ))
+    : movies2 && movies2.map(elemento => {
+      console.log('elemento',elemento)  
+      return (
+            <li key={elemento.imdbID} className='item'>
+                <Link to={`/peliculas/${elemento.imdbID}`}>
+                    <div className='contenido'>
+                        <img src={elemento.Poster} alt="" />
+                        <p>{elemento.Title}</p> 
                         <div className='buttons'>
                             <button className='buttonMg'></button>
                             <button className='buttonVisto'></button>
-                         </div>
-                  </div>
+                        </div>
+                    </div>
                 </Link>
-              </li> )
-        })}
-
-        {peliculasEncontradas.length > 0
-                ? peliculasEncontradas.map((elemento) => (
-                      <li key={elemento.id} className='item'>
-                        <Link to={`/peliculas/${elemento.id}`}>
-                          <div className='contenido'>
-                              <img
-                                  src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
-                                  alt=''
-                              />
-                              <p>{elemento.title}</p>
-                              <div className='buttons'>
-                                  <button className='buttonMg'></button>
-                                  <button className='buttonVisto'></button>
-                              </div>
-                          </div>
-                          </Link>
-                      </li>
-                  ))
-        :movies1 && movies1.map( elemento => {
-                  return( 
-                    <li key={elemento.id} className='item'> 
-                      <Link to={`/peliculas/${elemento.id}`}>
-                          <div className='contenido'>
-                              <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                              <p>{elemento.title}</p>
-                                <div className='buttons'>
-                                  <button className='buttonMg'></button>
-                                  <button className='buttonVisto'></button>
-                                </div>
-                          </div>
-                        </Link>
-                      </li> )
-                })}
+            </li>
+        )
+    })
+}
+{peliculasEncontradas.length > 0
+    ? peliculasEncontradas.map((elemento) => (
+        <li key={elemento.imdbID} className='item'>
+            <Link to={`/peliculas/${elemento.imdbID}`}>
+                <div className='contenido'>
+                    <img src={elemento.Poster} alt='' />
+                    <p>{elemento.Title}</p> 
+                    <div className='buttons'>
+                        <button className='buttonMg'></button>
+                        <button className='buttonVisto'></button>
+                    </div>
+                </div>
+            </Link>
+        </li>
+    ))
+    : movies3 && movies3.map(elemento => {
+      console.log('elemento',elemento)  
+      return (
+            <li key={elemento.imdbID} className='item'>
+                <Link to={`/peliculas/${elemento.imdbID}`}>
+                    <div className='contenido'>
+                        <img src={elemento.Poster} alt="" />
+                        <p>{elemento.Title}</p> 
+                        <div className='buttons'>
+                            <button className='buttonMg'></button>
+                            <button className='buttonVisto'></button>
+                        </div>
+                    </div>
+                </Link>
+            </li>
+        )
+    })
+}
+{peliculasEncontradas.length > 0
+    ? peliculasEncontradas.map((elemento) => (
+        <li key={elemento.imdbID} className='item'>
+            <Link to={`/peliculas/${elemento.imdbID}`}>
+                <div className='contenido'>
+                    <img src={elemento.Poster} alt='' />
+                    <p>{elemento.Title}</p> 
+                    <div className='buttons'>
+                        <button className='buttonMg'></button>
+                        <button className='buttonVisto'></button>
+                    </div>
+                </div>
+            </Link>
+        </li>
+    ))
+    : movies4 && movies4.map(elemento => {
+     
+      return (
+            <li key={elemento.imdbID} className='item'>
+                <Link to={`/peliculas/${elemento.imdbID}`}>
+                    <div className='contenido'>
+                        <img src={elemento.Poster} alt="" />
+                        <p>{elemento.Title}</p> 
+                        <div className='buttons'>
+                            <button className='buttonMg'></button>
+                            <button className='buttonVisto'></button>
+                        </div>
+                    </div>
+                </Link>
+            </li>
+        )
+    })
+}
       </ul>
     </div>
   )

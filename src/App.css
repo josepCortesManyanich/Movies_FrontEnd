@@ -46,6 +46,7 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .menu li {
@@ -475,10 +476,7 @@ body {
   background-size: 100%;
 }
 
-/*IPHONE PRO MAX */
-@media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
-
-
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
   .App {
     width: 90%;
     height: auto;
@@ -486,6 +484,10 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     min-height: 600px;
+  }
+
+  .body {
+    background-size: 100%;
   }
 
   .list {
@@ -526,31 +528,30 @@ body {
 
   /*detalles series peliculas*/
   .detalle {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-
+    height: 100%;
   }
 
   .item1 {
-    width: 100%;
-    margin: 10px 0;
-    height: 750px;
+    padding: 8px;
+    margin-bottom: 8px;
+    width: 385px;
+    margin-right: 45px;
   }
 
-  .contenido1,
-  .contenido2 {
+  .contenido1 {
     width: 100%;
   }
 
-  .contenido1,
   .contenido2 {
-    max-width: 250px;
-    height: 400px;
+    width: 100%;
   }
 
   .contenido1 img {
-    max-width: 250px;
+    width: 100%;
+    max-height: 85%;
   }
 
   .contenido1 p {
@@ -558,66 +559,317 @@ body {
     padding: 8px;
   }
 
-  .contenido2 h4 {
-    font-family: Arial, sans-serif;
-    font-size: 8px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #f7f4f4;
-    margin: 15px;
-    padding: 8px;
-  }
 
+  .contenido2 h4,
   .contenido2 p {
     font-family: Arial, sans-serif;
     font-size: 12px;
     font-weight: bold;
     line-height: 1.5;
     color: #f7f4f4;
-    margin: 15px;
+    margin: 10px;
     padding: 8px;
   }
 
   .lista-genero {
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     line-height: 1.5;
     color: #f7f4f4;
     list-style: none;
     padding: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .item-genero {
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
     padding: 10px;
   }
 
   .buttons1 {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .buttons1 button {
-    width: 100px;
-    height: 85px;
-    padding: 2px 24px;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
     background-color: #000;
     background-size: cover;
+    margin-right: 50px;
   }
 
   .buttonMg1,
   .buttonVisto1 {
-    width: 50px;
-    height: 50px;
-    margin: 15px;
+    margin: 10px;
     background-size: contain;
   }
+
+  /*navbar*/
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu li {
+    margin-right: 10px;
+    /* Ajusto el espacio entre elementos */
+    padding: 10px;
+    /* Ajusto el espacio interno */
+  }
+
+  .menu li a {
+    font-size: 14px;
+    /* Ajusto el tamaño de la fuente */
+  }
+
+}
+
+
+/*IPHONE PRO MAX */
+@media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+
+
+  .App {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 600px;
+  }
+
+  .body {
+    background-size: 100%;
+  }
+
+  .list {
+    padding: 2px;
+  }
+
+  .item {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .contenido {
+    max-width: 180px;
+    height: 400px;
+  }
+
+  .contenido img {
+    max-width: 180px;
+  }
+
+  .contenido p {
+    font-size: 14px;
+    padding: 8px
+  }
+
+
+  .buttons button {
+    width: 20px;
+    height: 30px;
+    padding: 2px 20px;
+    margin: 0 8px;
+  }
+
+  .buttonMg,
+  .buttonVisto {
+    width: 40px;
+  }
+
+  /*detalles series peliculas*/
+
+
+  .detalle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  .item1 {
+    padding: 8px;
+    margin-bottom: 8px;
+    width: 385px;
+    margin-right: 45px;
+  }
+
+  .contenido1 {
+    width: 100%;
+  }
+
+  .contenido2 {
+    width: 100%;
+  }
+
+  .contenido1 img {
+    width: 100%;
+    max-height: 85%;
+  }
+
+  .contenido1 p {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+
+  .contenido2 h4,
+  .contenido2 p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #f7f4f4;
+    margin: 10px;
+    padding: 8px;
+  }
+
+  .lista-genero {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #f7f4f4;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .item-genero {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .buttons1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .buttons1 button {
+    width: 35px;
+    height: 35px;
+    padding: 2px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #000;
+    background-size: cover;
+    margin-right: 50px;
+  }
+
+  .buttonMg1,
+  .buttonVisto1 {
+    margin: 10px;
+    background-size: contain;
+  }
+
+  /*navbar*/
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu li {
+    margin-right: 10px;
+    /* Ajusto el espacio entre elementos */
+    padding: 10px;
+    /* Ajusto el espacio interno */
+  }
+
+  .menu li a {
+    font-size: 14px;
+    /* Ajusto el tamaño de la fuente */
+  }
+
+  /*estilos home*/
+  .contenedor-home {
+    background-size: cover;
+    margin-top: 30px;
+
+    /* Ajusta el tamaño del fondo */
+  }
+
+  .bienvenida,
+  .bienvenida1 {
+    width: 100%;
+    height: 150px;
+    /* Ajusta el ancho al dispositivo */
+  }
+
+  .bienvenida h3 {
+    font-size: 40px;
+    /* Reduce el tamaño del título */
+  }
+
+  .bienvenida1 h2 {
+    font-size: 24px;
+
+  }
+
+  .seccion-signup,
+  .formulario,
+  .formulario-signup {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+
+  }
+
+  .seccion-login {
+    width: 95%;
+    margin-bottom: 15px;
+  }
+
+  .seccion-signup p {
+    font-size: 12px;
+
+  }
+
+  .seccion-signup button,
+  .formulario button[type="submit"],
+  .formulario-signup button[type="submit"] {
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 12px;
+
+  }
+
+  .formulario input[type="email"],
+  .formulario input[type="password"],
+  .formulario input[type="text"],
+  .formulario-signup input[type="email"],
+  .formulario-signup input[type="password"],
+  .formulario-signup input[type="text"] {
+    width: 75%;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .formulario-signup label,
+  .formulario label {
+    font-size: 12px;
+
+  }
+
+  .formulario1-input {
+    width: 90%;
+    font-size: 20px;
+
+  }
+
 
 
 }
