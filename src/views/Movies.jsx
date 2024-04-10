@@ -184,13 +184,13 @@ const handleBuscador = ((e) =>{
       pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies4];
     }
     if(movies5){
-        const pelisEncontradasMovies5 = movies4.filter(elem =>
+        const pelisEncontradasMovies5 = movies5.filter(elem =>
           elem.title.toLowerCase().includes(valorBuscado)
          );
         pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies5];
       }
       if(movies6){
-        const pelisEncontradasMovies6 = movies4.filter(elem =>
+        const pelisEncontradasMovies6 = movies6.filter(elem =>
           elem.title.toLowerCase().includes(valorBuscado)
          );
         pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies6];
