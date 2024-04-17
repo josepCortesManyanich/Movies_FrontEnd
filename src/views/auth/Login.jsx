@@ -25,11 +25,11 @@ export default function Login() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, user);
-      toast.success('Welcome back!')
+      const response = await axios.post('http://localhost:7000/api/user/login', user);
+      toast.success('Bienvenido')
       storeToken(response.data.authToken);
       authenticateUser();
-      navigate('/');
+      navigate('/peliculas');
     } catch (error) {
       setErrorMessage(error.response.data.error)
     }
