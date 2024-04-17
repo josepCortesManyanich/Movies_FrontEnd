@@ -14,20 +14,22 @@ import { Link } from 'react-router-dom'
 
  export default function Movies() {
     
-   
-    const [movies , setMovies] = useState(null)
-    const [movies1, setMovies1] = useState(null)
     const [movies2, setMovies2] = useState(null)
     const [movies3, setMovies3] =useState(null)
     const [movies4, setMovies4] = useState(null)
     const[movies5,setMovies5] = useState(null)
     const[movies6, setMovies6] = useState(null)
+    const[movies7, setMovies7] = useState(null)
+    const[movies8, setMovies8] = useState(null)
+    const[movies9, setMovies9] = useState(null)
+    const[movies10, setMovies10] = useState(null)
+    const[movies11, setMovies11] = useState(null)
     const [busqueda, setBusqueda] = useState('')
     const [peliculasEncontradas, setPeliculasEncontradas] = useState([]);
    
 
   
-   
+   /* Llamada a una api que no me pinta las imagenes, la paso a la base de datos y tampoco se me graba, no me es util para añadir la modalidad de favoritos ni de vistas
    useEffect (() => {
         const data = async () => {
             const options = {
@@ -59,7 +61,8 @@ import { Link } from 'react-router-dom'
         }
         data()
 
-    }, [])
+    }, [])  
+    */
 
   
   useEffect(() => {
@@ -91,12 +94,23 @@ useEffect(() => {
       const apiKey = 'ffdce154'; 
       const searchTerm= 'movie'; 
       const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
-      const searchTerm1= 'movies'; 
+      const searchTerm1= 'sky'; 
       const url1 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm1)}`;
       const searchTerm2= 'drama'; 
       const url2 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm2)}`;
       const searchTerm3= 'comedy'; 
       const url3 = `http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm3)}`;
+      const searchTerm4= 'war'
+      const url4=`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm4)}`;
+      const searchTerm5= 'marvel'
+      const url5=`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm5)}`;
+      const searchTerm6= 'harry'
+      const url6=`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm6)}`;
+      const searchTerm7= 'city'
+      const url7=`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm7)}`;
+      const searchTerm8= 'lord'
+      const url8=`http://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(searchTerm8)}`;
+      
 
       const options = {
           method: 'GET',
@@ -114,6 +128,27 @@ useEffect(() => {
         method: 'GET',
         url: url3
     };
+    const options4 ={
+        method:'GET',
+        url: url4
+    }
+    const options5 ={
+        method:'GET',
+        url: url5
+    }
+    const options6 ={
+        method:'GET',
+        url: url6
+    }
+    const options7 ={
+        method:'GET',
+        url: url7
+    }
+    const options8 ={
+        method:'GET',
+        url: url8
+    }
+
     
 
       try {
@@ -127,9 +162,24 @@ useEffect(() => {
           setMovies5(response3.data.Search)
           console.log(response3.data)
           const response4 = await axios(options3)
-          
           setMovies6(response4.data.Search)
           console.log(response4.data)
+          const response5 = await axios(options4)
+          console.log(response5.data)
+          setMovies7(response5.data.Search)
+          const response6 = await axios(options5)
+          console.log(response6.data)
+          setMovies8(response6.data.Search)
+          const response7 = await axios(options6)
+          console.log(response7.data)
+          setMovies9(response7.data.Search)
+          const response8 = await axios(options7)
+          console.log(response8.data)
+          setMovies10(response8.data.Search)
+          const response9 = await axios(options8)
+          console.log(response9.data)
+          setMovies11(response9.data.Search)
+
       } 
       
       catch (error) {
@@ -150,7 +200,7 @@ const handleBuscador = ((e) =>{
   
     let pelisEncontradas = [];
     
-   
+   /*
     if (movies) {
         const pelisEncontradasMovies = movies.filter(elem =>
             elem.title.toLowerCase().includes(valorBuscado)
@@ -164,41 +214,42 @@ const handleBuscador = ((e) =>{
             elem.title.toLowerCase().includes(valorBuscado)
         );
         pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies1];
-    }
+    } */
+
     if(movies2){
       const pelisEncontradasMovies2 = movies2.filter(elem =>
-        elem.title.toLowerCase().includes(valorBuscado)
+        elem.Title.toLowerCase().includes(valorBuscado)
        );
       pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies2];
     }
     if(movies3){
       const pelisEncontradasMovies3 = movies3.filter(elem =>
-        elem.title.toLowerCase().includes(valorBuscado)
+        elem.Title.toLowerCase().includes(valorBuscado)
        );
       pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies3];
     }
     if(movies4){
       const pelisEncontradasMovies4 = movies4.filter(elem =>
-        elem.title.toLowerCase().includes(valorBuscado)
+        elem.Title.toLowerCase().includes(valorBuscado)
        );
       pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies4];
     }
     if(movies5){
         const pelisEncontradasMovies5 = movies5.filter(elem =>
-          elem.title.toLowerCase().includes(valorBuscado)
+          elem.Title.toLowerCase().includes(valorBuscado)
          );
         pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies5];
       }
       if(movies6){
         const pelisEncontradasMovies6 = movies6.filter(elem =>
-          elem.title.toLowerCase().includes(valorBuscado)
+          elem.Title.toLowerCase().includes(valorBuscado)
          );
         pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies6];
       }  
     setPeliculasEncontradas(pelisEncontradas);
 })
 
-
+/* Funcion para hacer favorito a la API 1 
 const handleFavorito = async (id, title, poster_path) => {
     const favoritoData = {
         apiId: id,
@@ -213,6 +264,7 @@ const handleFavorito = async (id, title, poster_path) => {
         console.error(error);
     }
 }
+*/
 
 
 const handleFavorito1 = async (imdbID, Title, Poster) => {
@@ -229,6 +281,8 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
         console.error(error);
     }
 }
+
+
 
 
     return (
@@ -248,84 +302,8 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
             </form>
             
         <ul className='list'>
-            {peliculasEncontradas.length > 0
-            ? peliculasEncontradas.map((elemento) => (
-                <li key={elemento.id} className='item'>
-                
-                    <div className='contenido'>
-                    <Link to={`/peliculas/${elemento.id}`}>
-                        <img
-                            src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
-                            alt=''
-                        />  </Link>
-                        <p>{elemento.title}</p>
-                        
-                        <div className='buttons'>
-                            <button className='buttonMg' onClick={() => handleFavorito(elemento.id, elemento.title, elemento.poster_path)}></button>
-                            <button className='buttonVisto'></button>
-                        </div>
-                    </div>
-                    
-                </li>
-            ))
-        : movies && movies.map( elemento => {
-        return( 
-        <li key={elemento.id} className='item'> 
-            
-            <div className='contenido'>
-            <Link to={`/peliculas/${elemento.id}`}>
-                <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                <p>{elemento.title}</p>
-                </Link>
-                    <div className='buttons'>
-                        <button className='buttonMg' onClick={() => handleFavorito(elemento.id, elemento.title, elemento.poster_path)}></button>
-                        <button className='buttonVisto'></button>
-                    </div>
-            </div>
-        
-        </li> )
-        })}
-
         {peliculasEncontradas.length > 0
-            ? peliculasEncontradas.map((elemento) => (
-                <li key={elemento.id} className='item'>
-                    
-                    <div className='contenido'>
-                    <Link to={`/peliculas/${elemento.id}`}>
-                        <img
-                            src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`}
-                            alt=''
-                        />
-                        <p>{elemento.title}</p>
-                        </Link>
-                        <div className='buttons'>
-                            <button className='buttonMg' onClick={() => handleFavorito(elemento.id, elemento.title, elemento.poster_path)}></button>
-                            <button className='buttonVisto'></button>
-                        </div>
-                    </div>
-                    
-                </li>
-            ))
-        :movies1 && movies1.map( elemento => {
-            return( 
-                <li key={elemento.id} className='item'> 
-            
-                    <div className='contenido'>
-                    <Link to={`/peliculas/${elemento.id}`}>
-                        <img   src={`https://image.tmdb.org/t/p/w500/${elemento.poster_path}`} alt="" /> 
-                        <p>{elemento.title}</p>
-                        </Link>
-                            <div className='buttons'>
-                            <button className='buttonMg' onClick={() => handleFavorito(elemento.id, elemento.title, elemento.poster_path)}></button>
-                            <button className='buttonVisto'></button>
-                            </div>
-                    </div>
-                    
-                </li> )
-            })}
-
-        {peliculasEncontradas.length > 0
-            ? peliculasEncontradas.map((elemento) => (
+            ? peliculasEncontradas.map((elemento) =>  (
                 <li key={elemento.imdbID} className='item'>
                 
                         <div className='contenido'>
@@ -334,7 +312,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                             <p>{elemento.Title}</p> 
                             </Link>
                             <div className='buttons'>
-                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                 <button className='buttonVisto'></button>
                             </div>
                         </div>
@@ -352,7 +330,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                                 <p>{elemento.Title}</p> 
                                 </Link>
                                 <div className='buttons'>
-                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                     <button className='buttonVisto'></button>
                                 </div>
                             </div>
@@ -371,7 +349,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                             <p>{elemento.Title}</p> 
                             </Link>
                             <div className='buttons'>
-                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                 <button className='buttonVisto'></button>
                             </div>
                         </div>
@@ -389,7 +367,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                                 <p>{elemento.Title}</p> 
                                 </Link>
                                 <div className='buttons'>
-                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                     <button className='buttonVisto'></button>
                                 </div>
                             </div>
@@ -407,7 +385,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                             <p>{elemento.Title}</p> 
                             </Link>
                             <div className='buttons'>
-                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                 <button className='buttonVisto'></button>
                             </div>
                         </div>
@@ -424,7 +402,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                                 <p>{elemento.Title}</p> 
                                 </Link>
                                 <div className='buttons'>
-                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                     <button className='buttonVisto'></button>
                                 </div>
                             </div>
@@ -443,7 +421,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                             <p>{elemento.Title}</p> 
                             </Link>
                             <div className='buttons'>
-                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                 <button className='buttonVisto'></button>
                             </div>
                         </div>
@@ -461,7 +439,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                                 <p>{elemento.Title}</p> 
                                 </Link>
                                 <div className='buttons'>
-                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBID, elemento.Title, elemento.Poster)}></button>
                                     <button className='buttonVisto'></button>
                                 </div>
                             </div>
@@ -480,7 +458,7 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                             <p>{elemento.Title}</p> 
                             </Link>
                             <div className='buttons'>
-                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                 <button className='buttonVisto'></button>
                             </div>
                         </div>
@@ -498,7 +476,229 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
                                 <p>{elemento.Title}</p> 
                                 </Link>
                                 <div className='buttons'>
-                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdBId, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                            </div>
+                    
+                    </li>
+                )
+            })
+        }
+         {peliculasEncontradas.length > 0
+            ? peliculasEncontradas.map((elemento) =>  (
+                <li key={elemento.imdbID} className='item'>
+                
+                        <div className='contenido'>
+                            <Link to={`/peliculas/${elemento.imdbID}`}>
+                            <img src={elemento.Poster} alt='' />
+                            <p>{elemento.Title}</p> 
+                            </Link>
+                            <div className='buttons'>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonVisto'></button>
+                            </div>
+                        </div>
+                    
+                </li>
+            ))
+            : movies7 && movies7.map(elemento => {
+            
+            return (
+                    <li key={elemento.imdbID} className='item'>
+                    
+                            <div className='contenido'>
+                                <Link to={`/peliculas/${elemento.imdbID}`}>
+                                <img src={elemento.Poster} alt="" />
+                                <p>{elemento.Title}</p> 
+                                </Link>
+                                <div className='buttons'>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                            </div>
+                    
+                    </li>
+                )
+            })
+        }
+         {peliculasEncontradas.length > 0
+            ? peliculasEncontradas.map((elemento) =>  (
+                <li key={elemento.imdbID} className='item'>
+                
+                        <div className='contenido'>
+                            <Link to={`/peliculas/${elemento.imdbID}`}>
+                            <img src={elemento.Poster} alt='' />
+                            <p>{elemento.Title}</p> 
+                            </Link>
+                            <div className='buttons'>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonVisto'></button>
+                            </div>
+                        </div>
+                    
+                </li>
+            ))
+            : movies7 && movies7.map(elemento => {
+            
+            return (
+                    <li key={elemento.imdbID} className='item'>
+                    
+                            <div className='contenido'>
+                                <Link to={`/peliculas/${elemento.imdbID}`}>
+                                <img src={elemento.Poster} alt="" />
+                                <p>{elemento.Title}</p> 
+                                </Link>
+                                <div className='buttons'>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                            </div>
+                    
+                    </li>
+                )
+            })
+        }
+         {peliculasEncontradas.length > 0
+            ? peliculasEncontradas.map((elemento) =>  (
+                <li key={elemento.imdbID} className='item'>
+                
+                        <div className='contenido'>
+                            <Link to={`/peliculas/${elemento.imdbID}`}>
+                            <img src={elemento.Poster} alt='' />
+                            <p>{elemento.Title}</p> 
+                            </Link>
+                            <div className='buttons'>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonVisto'></button>
+                            </div>
+                        </div>
+                    
+                </li>
+            ))
+            : movies8 && movies8.map(elemento => {
+            
+            return (
+                    <li key={elemento.imdbID} className='item'>
+                    
+                            <div className='contenido'>
+                                <Link to={`/peliculas/${elemento.imdbID}`}>
+                                <img src={elemento.Poster} alt="" />
+                                <p>{elemento.Title}</p> 
+                                </Link>
+                                <div className='buttons'>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                            </div>
+                    
+                    </li>
+                )
+            })
+        }
+         {peliculasEncontradas.length > 0
+            ? peliculasEncontradas.map((elemento) =>  (
+                <li key={elemento.imdbID} className='item'>
+                
+                        <div className='contenido'>
+                            <Link to={`/peliculas/${elemento.imdbID}`}>
+                            <img src={elemento.Poster} alt='' />
+                            <p>{elemento.Title}</p> 
+                            </Link>
+                            <div className='buttons'>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonVisto'></button>
+                            </div>
+                        </div>
+                    
+                </li>
+            ))
+            : movies9 && movies9.map(elemento => {
+            
+            return (
+                    <li key={elemento.imdbID} className='item'>
+                    
+                            <div className='contenido'>
+                                <Link to={`/peliculas/${elemento.imdbID}`}>
+                                <img src={elemento.Poster} alt="" />
+                                <p>{elemento.Title}</p> 
+                                </Link>
+                                <div className='buttons'>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                            </div>
+                    
+                    </li>
+                )
+            })
+        }
+         {peliculasEncontradas.length > 0
+            ? peliculasEncontradas.map((elemento) =>  (
+                <li key={elemento.imdbID} className='item'>
+                
+                        <div className='contenido'>
+                            <Link to={`/peliculas/${elemento.imdbID}`}>
+                            <img src={elemento.Poster} alt='' />
+                            <p>{elemento.Title}</p> 
+                            </Link>
+                            <div className='buttons'>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonVisto'></button>
+                            </div>
+                        </div>
+                    
+                </li>
+            ))
+            : movies10 && movies10.map(elemento => {
+            
+            return (
+                    <li key={elemento.imdbID} className='item'>
+                    
+                            <div className='contenido'>
+                                <Link to={`/peliculas/${elemento.imdbID}`}>
+                                <img src={elemento.Poster} alt="" />
+                                <p>{elemento.Title}</p> 
+                                </Link>
+                                <div className='buttons'>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                    <button className='buttonVisto'></button>
+                                </div>
+                            </div>
+                    
+                    </li>
+                )
+            })
+        }
+         {peliculasEncontradas.length > 0
+            ? peliculasEncontradas.map((elemento) =>  (
+                <li key={elemento.imdbID} className='item'>
+                
+                        <div className='contenido'>
+                            <Link to={`/peliculas/${elemento.imdbID}`}>
+                            <img src={elemento.Poster} alt='' />
+                            <p>{elemento.Title}</p> 
+                            </Link>
+                            <div className='buttons'>
+                                <button className='buttonMg' onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
+                                <button className='buttonVisto'></button>
+                            </div>
+                        </div>
+                    
+                </li>
+            ))
+            : movies11 && movies11.map(elemento => {
+            
+            return (
+                    <li key={elemento.imdbID} className='item'>
+                    
+                            <div className='contenido'>
+                                <Link to={`/peliculas/${elemento.imdbID}`}>
+                                <img src={elemento.Poster} alt="" />
+                                <p>{elemento.Title}</p> 
+                                </Link>
+                                <div className='buttons'>
+                                    <button className='buttonMg'onClick={() => handleFavorito1(elemento.imdbID, elemento.Title, elemento.Poster)}></button>
                                     <button className='buttonVisto'></button>
                                 </div>
                             </div>

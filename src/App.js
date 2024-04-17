@@ -12,11 +12,11 @@ import Signup from './views/auth/Signup';
 
 
 
+
 function App() {
   return (
-    <div className="App"> 
-    
-       <Routes>
+    <div> 
+      <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/peliculas" element={<Movies/>} />
                 <Route path="/series" element={<Series/>} />
@@ -25,9 +25,7 @@ function App() {
                 <Route path="*" element={<ErrorPage />} />
                 <Route path="/peliculas/:id" element={<MoviesDetail/>}/>
                 <Route path="/series/:id" element={<SeriesDetail/>}/>
-        </Routes>
-       
-       
+      </Routes>
       
     </div>
   );
