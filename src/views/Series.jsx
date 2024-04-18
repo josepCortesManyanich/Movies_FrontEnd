@@ -7,11 +7,6 @@ import Navbar from '../components/Navbar'
 
 
 
-
-
-
-
-
  export default function Movies() {
     const[series, setSeries] = useState([])
     const [busqueda, setBusqueda] = useState('')
@@ -19,7 +14,6 @@ import Navbar from '../components/Navbar'
     
    
 
-  
   
 useEffect(() =>{
     const data = async() =>{

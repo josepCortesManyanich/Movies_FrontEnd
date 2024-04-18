@@ -15,10 +15,10 @@ export default function Navbar() {
         {!isLoggedIn&&<Navbar2/>}
         {isLoggedIn && 
           <>
-             <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="'/perfil'">Perfil</NavLink></li>
+             <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/perfil">Perfil</NavLink></li>
              <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/peliculas">Peliculas</NavLink></li>
              <li><NavLink className={(element) => element.isActive ? 'selected' : ''} to="/series">Series</NavLink></li>
-             <li><button onClick={() => logOutUser()}>Log out</button></li>
+             <li><button className='navbar-button' onClick={() => logOutUser()}>Log out</button></li>
           </>
         }
         

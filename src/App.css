@@ -8,8 +8,9 @@
 }
 
 body {
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1713402455/desktop-wallpaper-movie-collage-posted-by-ryan-peltier-80s-movie-collage_le4f2r.jpg');
+  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1713477564/movie-background-collage_23-2149876030_l79yao.avif');
   background-size: 100%;
+  Font-family: Baskerville;
 }
 
 .selected {
@@ -73,6 +74,19 @@ body {
   margin-right: 0;
 }
 
+.navbar-button {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: #ff0800;
+  color: #050505;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /*estilos home*/
 
@@ -191,6 +205,110 @@ body {
   cursor: pointer;
 
 }
+
+/*estilos profile*/
+
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.vistas-favoritas {
+  height: 100vh;
+  margin-top: 150px;
+
+}
+
+
+
+
+.contenedor-edit {
+  display: flex;
+  margin-top: 15%;
+
+}
+
+.formulario-edit {
+  flex-wrap: wrap;
+  width: 800px;
+  height: 550px;
+  background-color: #050505;
+  align-items: center;
+  padding: 20px;
+  border-radius: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15%;
+}
+
+.contenedor-inputImage {
+  color: white;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  font-size: 22px;
+}
+
+.contenedor-inputImage input[type="file"] {
+  padding: 30px;
+}
+
+.formulario-edit h4 {
+  color: rgb(236, 14, 14);
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.formulario-edit-label {
+  display: flex;
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #f7f4f4;
+}
+
+.formulario-edit input[type="email"],
+.formulario-edit input[type="password"],
+.formulario-edit input[type="text"] {
+  width: 95%;
+  padding: 15px;
+  margin-bottom: 40px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+
+.formulario-edit button[type="submit"] {
+  width: 98%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0800;
+  color: #f5f2f2;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+
+
+.titulo {
+  text-align: center;
+  width: 25%;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25%;
+  background-color: black;
+}
+
+.titulo h3 {
+  margin: 0;
+  color: rgb(241, 5, 5);
+  font-size: 35px;
+}
+
 
 /*estilos formulario signup*/
 .contenedor-signup {
