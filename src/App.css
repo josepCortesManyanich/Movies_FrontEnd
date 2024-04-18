@@ -7,7 +7,10 @@
   min-height: 750px;
 }
 
-
+body {
+  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1713402455/desktop-wallpaper-movie-collage-posted-by-ryan-peltier-80s-movie-collage_le4f2r.jpg');
+  background-size: 100%;
+}
 
 .selected {
   color: red;
@@ -125,6 +128,7 @@
   border-radius: 0 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+
 }
 
 .seccion-signup p {

@@ -4,8 +4,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+
 
 
 
@@ -17,7 +16,7 @@ import { useParams } from 'react-router-dom'
     const[movies, setMovies] = useState([])
     const [busqueda, setBusqueda] = useState('')
     const [peliculasEncontradas, setPeliculasEncontradas] = useState([]);
-    const {movieId} = useParams()
+
    
 
   
@@ -44,7 +43,7 @@ const handleBuscador = ((e) =>{
     
       if (movies) {
           const pelisEncontradasMovies = movies.filter(elem =>
-              elem.Title.toLowerCase().includes(valorBuscado)
+              elem.apiTitle.toLowerCase().includes(valorBuscado)
           );
           pelisEncontradas = [...pelisEncontradas, ...pelisEncontradasMovies];
       }
@@ -110,10 +109,10 @@ const handleVistas = async (movieId,apiTitle,apiImage ) => {
                 <li key={elemento._id} className='item'>
                 
                         <div className='contenido'>
-                            <Link to={`/peliculas/${elemento._id}`}>
+                           
                             <img src={elemento.apiImage} alt='' />;
                             <p>{elemento.apiTitle}</p> 
-                            </Link>
+                      
                             <div className='buttons'>
                                 <button className='buttonMg' onClick={() =>{
                                     console.log("ID de la película:", elemento._id)
@@ -133,10 +132,10 @@ const handleVistas = async (movieId,apiTitle,apiImage ) => {
                     <li key={elemento._id} className='item'>
                     
                             <div className='contenido'>
-                                <Link to={`/peliculas/${elemento._id}`}>
+                    
                                 <img src={elemento.apiImage} alt="" />
                                 <p>{elemento.apiTitle}</p> 
-                                </Link>
+                        
                                 <div className='buttons'>
                                 <button className='buttonMg' onClick={() =>{
                                     console.log("ID de la película:", elemento._id,elemento.apiTitle,elemento.apiImage)
