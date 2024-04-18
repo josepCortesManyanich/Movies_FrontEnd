@@ -14,16 +14,8 @@ export default function Home() {
     
      <><Navbar/></>
     <div className='contenedor-home'>
-     
+    
        
-      <div className='bienvenida'>
-        <h3> BIENVENIDO A BADAL MEDIA</h3>
-      </div>
-          
-      <div className='bienvenida1'>
-          <h2 >Tus peliculas y series favoritas en un click</h2>
-      </div>
-        
      <div className='seccion-login'> 
         <Login></Login>
       </div>

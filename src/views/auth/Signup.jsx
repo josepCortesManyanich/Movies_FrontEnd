@@ -38,7 +38,7 @@ export default function Signup() {
     try {
       await axios.post('http://localhost:7000/api/user/signup', { username: user.username, email: user.email, password,
       cumpleaños: user.cumple, imagen: user.imageUrl });
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       setErrorMessage(error.response.data.error)
     }

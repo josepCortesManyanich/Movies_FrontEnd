@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState, useContext } from 'react';
-import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,8 +25,9 @@ export default function Login() {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:7000/api/user/login', user);
-      toast.success('Bienvenido')
-      storeToken(response.data.authToken);
+      const authToken = response.data.authToken;
+      storeToken(authToken);
+      localStorage.setItem('token', authToken); 
       authenticateUser();
       navigate('/peliculas');
     } catch (error) {

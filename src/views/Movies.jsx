@@ -267,7 +267,7 @@ const handleFavorito = async (id, title, poster_path) => {
 */
 
 
-const handleFavorito1 = async (imdbID, Title, Poster) => {
+const handleFavorito1 = async (imdbID, Title, Poster, ) => {
     const favoritoData = {
         apiId: imdbID,
         apiTitle: Title,
@@ -275,7 +275,12 @@ const handleFavorito1 = async (imdbID, Title, Poster) => {
     };
 
     try {
-        const response = await axios.post('http://localhost:7000/api/user/favoritas', favoritoData);
+        const storedToken = localStorage.getItem('authToken');
+        const response = await axios.post('http://localhost:7000/api/user/favoritas', favoritoData,{
+            headers: {
+                Authorization: `Bearer ${storedToken}`
+            }
+        });      
         console.log(response.data);
     } catch (error) {
         console.error(error);

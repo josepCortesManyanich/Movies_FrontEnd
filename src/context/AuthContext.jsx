@@ -24,9 +24,10 @@ function AuthProviderWrapper(props) {
     const storedToken = localStorage.getItem('authToken');
     if (storedToken) {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/me`, { headers: { Authorization: `Bearer ${storedToken}` } });
+        const response = await axios.get('http://localhost:7000/api/user/me', { headers: { Authorization: `Bearer ${storedToken}` } });
         setIsLoggedIn(true);
         setLoading(false);
+        console.log(response.data)
         setUser(response.data);
       } catch (error) {
         setIsLoggedIn(false);
