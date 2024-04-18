@@ -68,6 +68,23 @@ const handleFavorito1 = async (movieId,apiTitle,apiImage ) => {
     }
 }
 
+const handleVistas = async (movieId,apiTitle,apiImage ) => {
+    const vistaData = { apiTitle, apiImage};
+    
+
+    try {
+        const storedToken = localStorage.getItem('authToken');
+        const response = await axios.post(`http://localhost:7000/api/user/${movieId}/vistas`, vistaData,{
+            headers: {
+                Authorization: `Bearer ${storedToken}`
+            }
+        });      
+        console.log(response.data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 
 
 
@@ -98,10 +115,13 @@ const handleFavorito1 = async (movieId,apiTitle,apiImage ) => {
                             <p>{elemento.apiTitle}</p> 
                             </Link>
                             <div className='buttons'>
-                                <button className='buttonMg' onClick={(elemento) =>{
+                                <button className='buttonMg' onClick={() =>{
                                     console.log("ID de la película:", elemento._id)
                                     handleFavorito1(elemento._id, elemento.apiId, elemento.apiTitle, elemento.apiImage)}}></button>
-                                <button className='buttonVisto'></button>
+                                <button className='buttonVisto'
+                                onClick={() =>{
+                                    console.log("ID de la película:", elemento._id)
+                                    handleVistas(elemento._id, elemento.apiTitle, elemento.apiImage)}}></button>
                             </div>
                         </div>
                     
@@ -121,7 +141,9 @@ const handleFavorito1 = async (movieId,apiTitle,apiImage ) => {
                                 <button className='buttonMg' onClick={() =>{
                                     console.log("ID de la película:", elemento._id,elemento.apiTitle,elemento.apiImage)
                                     handleFavorito1(elemento._id,  elemento.apiTitle, elemento.apiImage)}}></button>
-                                <button className='buttonVisto'></button>
+                                <button className='buttonVisto' onClick={() =>{
+                                    console.log("ID de la película:", elemento._id)
+                                    handleVistas(elemento._id, elemento.apiTitle, elemento.apiImage)}}></button>
                                 </div>
                             </div>
                     
