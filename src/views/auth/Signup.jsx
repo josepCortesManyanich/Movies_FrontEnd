@@ -26,7 +26,7 @@ export default function Signup() {
 
   useEffect(() => {
     if (password !== passwordControl) {
-      setErrorMessage("Passwords don't match")
+      setErrorMessage("Las contraseñas no coinciden")
     } else {
       setErrorMessage(undefined)
     }
@@ -68,7 +68,7 @@ export default function Signup() {
         <label>Password</label>
         <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
         <br/>
-        <label>Repeat the password</label>
+        <label>Repite la contraseña</label>
         <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         <br/>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}

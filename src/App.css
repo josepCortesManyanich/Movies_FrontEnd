@@ -22,6 +22,10 @@ body {
 .header {
   width: 100%;
   height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999
 }
 
 .menu {
@@ -85,9 +89,13 @@ body {
 /*navbar no logeada*/
 /*navbar LOGEADA */
 
-.header {
+.header-1 {
   width: 100%;
   height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999
 }
 
 .menu-1 {
@@ -162,37 +170,8 @@ body {
   margin-top: 75px;
 }
 
-.bienvenida {
-  width: 1400px;
-  background-color: #050505;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-
-}
-
-.bienvenida1 {
-  width: 1400px;
-  background-color: #080808;
-  padding: 20px;
-  border-bottom-left-radius: 95px;
-  border-bottom-right-radius: 95px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-
-}
 
 
-
-.bienvenida h3 {
-  font-size: 80px;
-  color: #f00505;
-}
-
-.bienvenida1 h2 {
-  font-size: 36px;
-  color: #f30303;
-}
 
 .seccion-login {
   margin-top: 50px;
@@ -230,7 +209,7 @@ body {
 
 }
 
-/*estilos del formulario de la vista login.jsx*/
+/*estilos del formulario de la vista login. */
 .formulario {
   width: 800px;
   height: 350px;
@@ -429,7 +408,8 @@ body {
 
 /*Barra busqueda pelis y series*/
 .formulario1 {
-  margin: 20px;
+  margin-top: 10%;
+
 }
 
 .formulario1-input {
@@ -536,7 +516,7 @@ body {
 
 
 /*IPHONE PRO MAX */
-@media only screen and (device-width: 435px) and (device-height: 935px) {
+@media (max-width: 500px) and (max-height: 935px) {
 
 
   .App {
@@ -557,6 +537,9 @@ body {
 
   .list {
     padding: 2px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .item {
@@ -574,13 +557,16 @@ body {
   }
 
   .contenido p {
+    margin-top: 25px;
     font-size: 14px;
     padding: 8px
   }
 
 
   .buttons button {
+    margin-top: 25px;
     width: 20px;
+    align-items: center;
     height: 30px;
     padding: 2px 20px;
     margin: 0 8px;
@@ -589,13 +575,34 @@ body {
   .buttonMg,
   .buttonVisto {
     width: 40px;
+    padding: 15px;
+  }
+
+  /*Barra busqueda pelis y series*/
+  .formulario1 {
+    margin-top: 10%;
+
+  }
+
+  .formulario1-input {
+    width: 85%;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+    margin-left: 15px;
+    padding-left: 45px;
+
   }
 
 
   /*navbar LOGEADA */
   header {
+    margin-top: 10%;
     width: 100%;
     height: 75px;
+
   }
 
   .menu {
@@ -604,10 +611,11 @@ body {
     align-items: center;
     width: 100%;
     height: 70%;
+    flex-wrap: wrap;
   }
 
   .menu ul {
-    width: 100%;
+    width: 95%;
     height: 100%;
     list-style-type: none;
     padding: 0;
@@ -621,6 +629,7 @@ body {
   }
 
   .navbar {
+    width: 70%;
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -628,37 +637,47 @@ body {
   }
 
   .navbar li {
-    margin-left: 10px;
+    margin-left: 5px;
     padding: 5px;
   }
 
+
+
+  .navbar li:last-child {
+    margin-right: 15%;
+  }
+
   .navbar li a {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     text-decoration: none;
   }
 
   .navbar-button {
-    padding: 8px 15px;
-    border-radius: 25px;
-    background-color: #ff0800;
-    color: #050505;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
+    padding: 10px;
+    background-color: #f70404;
+    border-radius: 35%;
   }
 
   /*NAVBAR NO LOGEADA*/
+  .header-1 {
+    margin-top: 10%;
+    width: 100%;
+    height: 75px;
+
+  }
+
   .menu-1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65%;
+    width: 100%;
     height: 70%;
+    flex-wrap: wrap;
   }
 
   .menu-1 ul {
-    width: 55%;
+    width: 95%;
     height: 100%;
     list-style-type: none;
     padding: 0;
@@ -679,7 +698,7 @@ body {
   }
 
   .navbar-1 li {
-    margin-left: 10px;
+    margin-left: 5px;
     padding: 5px;
   }
 
@@ -689,76 +708,85 @@ body {
     text-decoration: none;
   }
 
-  /*Form login*/
+  .navbar-button {
+    padding: 10px;
+    background-color: #f70404;
+    border-radius: 35%;
+  }
+
+  /*estilos de la homepage*/
+
+  .contenedor-home {
+    padding: 20px;
+    align-items: center;
+  }
 
   .seccion-login {
+    width: 75%;
     margin-top: 20px;
-    /* Reducido el margen superior */
     padding: 10px;
-    /* Ajustado el padding */
+    height: 300px;
+    margin-bottom: 35%;
+    margin-right: 25%;
+    margin-left: 15%;
+
   }
 
   .seccion-signup {
-    width: 90%;
-    /* Ajustado el ancho al 90% */
-    margin-bottom: 30px;
-    /* Añadido margen inferior */
+    width: 75%;
+    height: 85px;
+    margin-top: 30px;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    margin-right: 15%;
+    margin-left: 25%;
   }
 
   .seccion-signup p {
     font-size: 18px;
-    /* Reducido el tamaño del texto */
   }
 
   .seccion-signup button {
-    width: 80%;
-    /* Ajustado el ancho al 80% */
+    width: 60%;
     height: 40px;
     padding: 10px;
     border-radius: 20px;
     font-size: 18px;
-    /* Reducido el tamaño del texto */
+
   }
 
+  /*VISTA LOGIN*/
   .formulario {
     width: 90%;
-    /* Ajustado el ancho al 90% */
-    max-width: 400px;
     margin: 0 auto;
     background-color: #050505;
-    padding: 20px;
+    padding: 50px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .formulario label {
     margin-bottom: 10px;
-    /* Reducido el margen inferior */
     font-size: 16px;
-    /* Reducido el tamaño del texto */
     color: #f7f4f4;
   }
 
   .formulario input[type="email"],
   .formulario input[type="password"] {
-    width: 100%;
-    /* Ancho completo */
+    width: 85%;
     padding: 10px;
     margin-bottom: 10px;
-    /* Reducido el margen inferior */
     border: 1px solid #333;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 16px;
-    /* Reducido el tamaño del texto */
+
   }
 
   .formulario button[type="submit"] {
-    width: 100%;
-    /* Ancho completo */
+    margin: auto;
+    margin-top: 50px;
+    width: 85%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -769,7 +797,68 @@ body {
     cursor: pointer;
   }
 
+  /*VISTA SIGN UP*/
 
+  .contenedor-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+    padding-top: 50px;
+  }
+
+  .formulario-signup {
+    width: 70%;
+    height: 650px;
+    background-color: #050505;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .formulario-signup label {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #f7f4f4;
+  }
+
+  .formulario-signup input[type="email"],
+  .formulario-signup input[type="password"],
+  .formulario-signup input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+
+  .formulario-signup input[type="file"] {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+
+  .formulario-signup button[type="submit"] {
+    width: 88%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0800;
+    color: #f5f2f2;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+
+  }
+
+
+  /*VISTA PROFILE*/
   .profile {
     display: flex;
     flex-direction: column;

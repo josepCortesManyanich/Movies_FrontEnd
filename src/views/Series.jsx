@@ -1,9 +1,11 @@
 
-import React from 'react'
+import React, {useContext} from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import Navbar from '../components/Navbar'
+import Navbar2 from '../components/Navbar2'
+import { AuthContext } from '../context/AuthContext'
 
 
 
@@ -11,6 +13,7 @@ import Navbar from '../components/Navbar'
     const[series, setSeries] = useState([])
     const [busqueda, setBusqueda] = useState('')
     const [seriesEncontradas, setSeriesEncontradas] = useState([]);
+    const { isLoggedIn } = useContext(AuthContext);
     
    
 
@@ -83,7 +86,8 @@ const handleVistas = async (serieId,apiTitle,apiImage ) => {
 
     return (
         <div>
-            <Navbar/>
+              {!isLoggedIn&&<Navbar2/>}
+             {isLoggedIn && <Navbar/>}
 
             <form className='formulario1'>
                 <input
