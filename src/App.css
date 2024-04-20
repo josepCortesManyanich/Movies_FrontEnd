@@ -17,76 +17,141 @@ body {
   color: red;
 }
 
-/*estilos navbar*/
+/*estilos navbar logeada*/
 
 .header {
-  margin: 0 auto;
-  width: 50%;
-  background-color: rgb(3, 3, 3);
-  text-align: center;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  border-bottom-left-radius: 55px;
-  border-bottom-right-radius: 55px;
+  width: 100%;
+  height: 150px;
 }
 
 .menu {
+  margin: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  width: 85%;
+  height: 70%;
 
 }
 
-
 .menu ul {
+  width: 75%;
+  height: 100%;
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: row;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+  background-image: url(https://res.cloudinary.com/josepcortes/image/upload/v1713402455/desktop-wallpaper-movie-collage-posted-by-ryan-peltier-80s-movie-collage_le4f2r.jpg);
+  border: 1px solid rgb(241, 238, 238);
+}
+
+.navbar {
+
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  flex-wrap: wrap;
 }
 
-.menu li {
-  margin-right: 80px;
-  padding: 60px;
-  color: #f00505;
-
+.navbar li {
+  margin-left: 20px;
+  padding: 15px;
 }
 
-.menu li a {
+.navbar li:first-child {
+  margin-left: 5%;
+}
+
+.navbar li:last-child {
+  margin-right: 15%;
+}
+
+.navbar li a {
   font-size: 25px;
-  color: #f80505;
+  color: #f8f4f4;
   font-weight: bold;
   text-decoration: none;
 }
 
-.menu li:first-child {
-  margin-left: 15px;
+.navbar-button {
+  padding: 15px;
+  background-color: #f70404;
+  border-radius: 35%;
 }
 
-.menu li:last-child {
-  margin-right: 0;
+/*navbar no logeada*/
+/*navbar LOGEADA */
+
+.header {
+  width: 100%;
+  height: 150px;
+}
+
+.menu-1 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 70%;
+
+}
+
+.menu-1 ul {
+  width: 75%;
+  height: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+  background-image: url(https://res.cloudinary.com/josepcortes/image/upload/v1713402455/desktop-wallpaper-movie-collage-posted-by-ryan-peltier-80s-movie-collage_le4f2r.jpg);
+  border: 1px solid rgb(241, 238, 238);
+}
+
+.navbar-1 {
+
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-1 li {
+  margin-left: 20px;
+  padding: 15px;
+}
+
+.navbar-1 li:first-child {
+  margin-left: 15%;
+}
+
+.navbar-1 li:last-child {
+  margin-right: 15%;
+}
+
+.navbar-1 li a {
+  font-size: 25px;
+  color: #f5f0f0;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .navbar-button {
-  margin-bottom: 15px;
-  margin-top: 20px;
-  align-items: center;
-  padding: 20px;
-  border: none;
-  border-radius: 50px;
-  background-color: #ff0800;
-  color: #050505;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
+  padding: 15px;
+  background-color: #ff0000;
+  border-radius: 35%;
 }
+
+
+
+
+
 
 /*estilos home*/
 
@@ -212,6 +277,7 @@ body {
 .profile {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .vistas-favoritas {
@@ -225,7 +291,8 @@ body {
 
 .contenedor-edit {
   display: flex;
-  margin-top: 15%;
+  margin-top: 5%;
+  margin-right: 10%;
 
 }
 
@@ -392,7 +459,7 @@ body {
   margin: 10px auto;
   padding: 12px;
   border-radius: 5px;
-  background-color: #020202;
+  background-color: #fdfafa;
   border-radius: 0 0 20px 20px;
   min-height: 200px;
   margin-bottom: 10px;
@@ -406,7 +473,7 @@ body {
   max-width: 250px;
   height: 500px;
   margin-top: 0px;
-  background-color: rgb(8, 8, 8);
+  background-color: #fdfafa;
 
 }
 
@@ -422,109 +489,12 @@ body {
   font-size: 20px;
   font-weight: bold;
   line-height: 1.5;
-  color: #f7f4f4;
+  color: #050505;
   margin: 0 auto;
   padding: 10px;
 }
 
-/*Detalles pelicula*/
-.detalle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 25px;
 
-}
-
-.item1 {
-  list-style-type: none;
-  margin: 20px;
-  padding: 20px;
-  height: 85%;
-  border: 1px solid #070707;
-  border-radius: 55px;
-  background-color: #030303;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-grow: 1;
-}
-
-.contenido1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 25px;
-}
-
-.contenido1 img {
-  width: 65%;
-  height: 85%;
-  margin-bottom: 10px;
-  border-radius: 25px;
-}
-
-.contenido1 p {
-  font-family: Arial, sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin: 0 auto;
-  padding: 10px;
-  margin-top: 30px;
-}
-
-.contenido1,
-.contenido2 {
-  flex: 1;
-}
-
-.contenido2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.contenido2 h4 {
-  font-family: Arial, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin: 25px;
-  padding: 10px;
-}
-
-.contenido2 p {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin: 25px;
-  padding: 10px;
-}
-
-.lista-genero {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
-}
-
-.item-genero {
-  font-family: Arial, sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 1.5;
-  color: #f7f4f4;
-  margin-bottom: 15px;
-  padding: 10px;
-}
 
 /* BOTONES DE FAVORITOS Y DE VISTO */
 
@@ -544,7 +514,6 @@ body {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  background-color: #000;
   background-size: cover;
 }
 
@@ -561,202 +530,13 @@ body {
   background-size: 100%;
 }
 
-/*Botones de perfil pelicula*/
-
-.buttons1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-  justify-content: center;
-}
-
-.buttons1 button {
-  width: 100px;
-  height: 85px;
-  padding: 2px 24px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  background-color: #000;
-  background-size: cover;
-}
 
 
-.buttonMg1 {
-  width: 50px;
-  margin-right: 50px;
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712547474/heart-emoji_dqip4t.png');
-  background-size: 100%
-}
 
-.buttonVisto1 {
-  width: 50px;
-  margin-left: 50px;
-  background-image: url('https://res.cloudinary.com/josepcortes/image/upload/v1712546515/ojo-removebg-preview_1_ths424.png');
-  background-size: 100%;
-}
-
-@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
-  .App {
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    min-height: 600px;
-  }
-
-  .body {
-    background-size: 100%;
-  }
-
-  .list {
-    padding: 2px;
-  }
-
-  .item {
-    padding: 8px;
-    margin-bottom: 8px;
-  }
-
-  .contenido {
-    max-width: 180px;
-    height: 400px;
-  }
-
-  .contenido img {
-    max-width: 180px;
-  }
-
-  .contenido p {
-    font-size: 14px;
-    padding: 8px
-  }
-
-
-  .buttons button {
-    width: 20px;
-    height: 30px;
-    padding: 2px 20px;
-    margin: 0 8px;
-  }
-
-  .buttonMg,
-  .buttonVisto {
-    width: 40px;
-  }
-
-  /*detalles series peliculas*/
-  .detalle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-
-  .item1 {
-    padding: 8px;
-    margin-bottom: 8px;
-    width: 385px;
-    margin-right: 45px;
-  }
-
-  .contenido1 {
-    width: 100%;
-  }
-
-  .contenido2 {
-    width: 100%;
-  }
-
-  .contenido1 img {
-    width: 100%;
-    max-height: 85%;
-  }
-
-  .contenido1 p {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-
-  .contenido2 h4,
-  .contenido2 p {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #f7f4f4;
-    margin: 10px;
-    padding: 8px;
-  }
-
-  .lista-genero {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #f7f4f4;
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
-  }
-
-  .item-genero {
-    font-size: 14px;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  .buttons1 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .buttons1 button {
-    width: 25px;
-    height: 25px;
-    padding: 2px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #000;
-    background-size: cover;
-    margin-right: 50px;
-  }
-
-  .buttonMg1,
-  .buttonVisto1 {
-    margin: 10px;
-    background-size: contain;
-  }
-
-  /*navbar*/
-
-  .menu {
-    width: 100%;
-  }
-
-  .menu li {
-    margin-right: 10px;
-    /* Ajusto el espacio entre elementos */
-    padding: 10px;
-    /* Ajusto el espacio interno */
-  }
-
-  .menu li a {
-    font-size: 14px;
-    /* Ajusto el tamaño de la fuente */
-  }
-
-}
 
 
 /*IPHONE PRO MAX */
-@media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (device-width: 435px) and (device-height: 940px) {
 
 
   .App {
@@ -771,6 +551,9 @@ body {
   .body {
     background-size: 100%;
   }
+
+
+  /*estilos listas de peliculas y listas de series*/
 
   .list {
     padding: 2px;
@@ -808,189 +591,300 @@ body {
     width: 40px;
   }
 
-  /*detalles series peliculas*/
 
-
-  .detalle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-  }
-
-  .item1 {
-    padding: 8px;
-    margin-bottom: 8px;
-    width: 385px;
-    margin-right: 45px;
-  }
-
-  .contenido1 {
+  /*navbar LOGEADA */
+  header {
     width: 100%;
+    height: 75px;
   }
-
-  .contenido2 {
-    width: 100%;
-  }
-
-  .contenido1 img {
-    width: 100%;
-    max-height: 85%;
-  }
-
-  .contenido1 p {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-
-  .contenido2 h4,
-  .contenido2 p {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #f7f4f4;
-    margin: 10px;
-    padding: 8px;
-  }
-
-  .lista-genero {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.5;
-    color: #f7f4f4;
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
-  }
-
-  .item-genero {
-    font-size: 14px;
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  .buttons1 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .buttons1 button {
-    width: 35px;
-    height: 35px;
-    padding: 2px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #000;
-    background-size: cover;
-    margin-right: 50px;
-  }
-
-  .buttonMg1,
-  .buttonVisto1 {
-    margin: 10px;
-    background-size: contain;
-  }
-
-  /*navbar*/
 
   .menu {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 70%;
   }
 
-  .menu li {
-    margin-right: 10px;
-    /* Ajusto el espacio entre elementos */
-    padding: 10px;
-    /* Ajusto el espacio interno */
+  .menu ul {
+    width: 85%;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    background-image: url(https://res.cloudinary.com/josepcortes/image/upload/v1713402455/desktop-wallpaper-movie-collage-posted-by-ryan-peltier-80s-movie-collage_le4f2r.jpg);
+    border: 0.5px solid rgb(241, 238, 238);
   }
 
-  .menu li a {
+  .navbar {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin-left: 10px;
+    padding: 5px;
+  }
+
+  .navbar li a {
     font-size: 14px;
-    /* Ajusto el tamaño de la fuente */
+    font-weight: bold;
+    text-decoration: none;
   }
 
-  /*estilos home*/
-  .contenedor-home {
-    background-size: cover;
-    margin-top: 30px;
-
-    /* Ajusta el tamaño del fondo */
+  .navbar-button {
+    padding: 8px 15px;
+    border-radius: 25px;
+    background-color: #ff0800;
+    color: #050505;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
   }
 
-  .bienvenida,
-  .bienvenida1 {
-    width: 100%;
-    height: 150px;
-    /* Ajusta el ancho al dispositivo */
+  /*NAVBAR NO LOGEADA*/
+  .menu-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 70%;
   }
 
-  .bienvenida h3 {
-    font-size: 40px;
-    /* Reduce el tamaño del título */
+  .menu-1 ul {
+    width: 55%;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    background-image: url(https://res.cloudinary.com/josepcortes/image/upload/v1713402455/desktop-wallpaper-movie-collage-posted-by-ryan-peltier-80s-movie-collage_le4f2r.jpg);
+    border: 0.5px solid rgb(241, 238, 238);
   }
 
-  .bienvenida1 h2 {
-    font-size: 24px;
-
+  .navbar-1 {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .seccion-signup,
-  .formulario,
-  .formulario-signup {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-
+  .navbar-1 li {
+    margin-left: 10px;
+    padding: 5px;
   }
+
+  .navbar-1 li a {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  /*Form login*/
 
   .seccion-login {
-    width: 95%;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    /* Reducido el margen superior */
+    padding: 10px;
+    /* Ajustado el padding */
+  }
+
+  .seccion-signup {
+    width: 90%;
+    /* Ajustado el ancho al 90% */
+    margin-bottom: 30px;
+    /* Añadido margen inferior */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
 
   .seccion-signup p {
-    font-size: 12px;
-
+    font-size: 18px;
+    /* Reducido el tamaño del texto */
   }
 
-  .seccion-signup button,
-  .formulario button[type="submit"],
-  .formulario-signup button[type="submit"] {
-    width: 100%;
-    padding: 8px 16px;
-    font-size: 12px;
+  .seccion-signup button {
+    width: 80%;
+    /* Ajustado el ancho al 80% */
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    /* Reducido el tamaño del texto */
+  }
 
+  .formulario {
+    width: 90%;
+    /* Ajustado el ancho al 90% */
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #050505;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .formulario label {
+    margin-bottom: 10px;
+    /* Reducido el margen inferior */
+    font-size: 16px;
+    /* Reducido el tamaño del texto */
+    color: #f7f4f4;
   }
 
   .formulario input[type="email"],
-  .formulario input[type="password"],
-  .formulario input[type="text"],
-  .formulario-signup input[type="email"],
-  .formulario-signup input[type="password"],
-  .formulario-signup input[type="text"] {
-    width: 75%;
-    padding: 8px;
-    font-size: 12px;
+  .formulario input[type="password"] {
+    width: 100%;
+    /* Ancho completo */
+    padding: 10px;
+    margin-bottom: 10px;
+    /* Reducido el margen inferior */
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    /* Reducido el tamaño del texto */
   }
 
-  .formulario-signup label,
-  .formulario label {
-    font-size: 12px;
-
+  .formulario button[type="submit"] {
+    width: 100%;
+    /* Ancho completo */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0800;
+    color: #f5f2f2;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
   }
 
-  .formulario1-input {
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    /* Cambiado a column para dispositivos móviles */
+    align-items: center;
+    /* Centrado horizontal */
+  }
+
+  .vistas-favoritas {
+    height: auto;
+    /* Altura automática para adaptarse al contenido */
+    margin-top: 50px;
+    /* Reducido el margen superior */
+  }
+
+  .contenedor-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  .formulario-edit {
     width: 90%;
-    font-size: 20px;
-
+    /* Ajustado el ancho al 90% */
+    max-width: 400px;
+    /* Establecido un ancho máximo */
+    height: auto;
+    /* Altura automática para adaptarse al contenido */
+    background-color: #050505;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5%;
+    /* Reducido el margen superior */
   }
 
+  .contenedor-inputImage {
+    color: white;
+    align-items: center;
+    /* Centrado horizontal */
+    justify-content: center;
+    /* Centrado vertical */
+    margin-bottom: 20px;
+    /* Reducido el margen inferior */
+    font-size: 18px;
+    /* Reducido el tamaño del texto */
+  }
 
+  .contenedor-inputImage input[type="file"] {
+    padding: 15px;
+    /* Reducido el padding */
+  }
 
+  .formulario-edit h4 {
+    color: rgb(236, 14, 14);
+    font-size: 18px;
+    /* Reducido el tamaño del texto */
+  }
+
+  .formulario-edit-label {
+    margin-bottom: 15px;
+    /* Reducido el margen inferior */
+    font-size: 18px;
+    /* Reducido el tamaño del texto */
+    color: #f7f4f4;
+  }
+
+  .formulario-edit input[type="email"],
+  .formulario-edit input[type="password"],
+  .formulario-edit input[type="text"] {
+    width: 100%;
+    /* Ancho completo */
+    padding: 10px;
+    margin-bottom: 15px;
+    /* Reducido el margen inferior */
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    /* Reducido el tamaño del texto */
+  }
+
+  .formulario-edit button[type="submit"] {
+    width: 100%;
+    /* Ancho completo */
+    padding: 10px;
+    margin-top: 15px;
+    /* Añadido margen superior */
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0800;
+    color: #f5f2f2;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .titulo {
+    text-align: center;
+    width: 50%;
+    /* Cambiado el ancho al 50% */
+    max-width: 300px;
+    /* Establecido un ancho máximo */
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25%;
+    background-color: black;
+  }
+
+  .titulo h3 {
+    margin: 0;
+    color: rgb(241, 5, 5);
+    font-size: 28px;
+    /* Reducido el tamaño del texto */
+  }
+
+  /* Estilos adicionales según sea necesario */
 }

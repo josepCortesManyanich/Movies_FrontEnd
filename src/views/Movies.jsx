@@ -82,6 +82,7 @@ const handleVistas = async (movieId,apiTitle,apiImage ) => {
     } catch (error) {
         console.error(error);
     }
+
 }
 
 
@@ -119,7 +120,7 @@ const handleVistas = async (movieId,apiTitle,apiImage ) => {
                                     handleFavorito1(elemento._id, elemento.apiId, elemento.apiTitle, elemento.apiImage)}}></button>
                                 <button className='buttonVisto'
                                 onClick={() =>{
-                                    console.log("ID de la película:", elemento._id)
+                                    console.log(handleVistas)
                                     handleVistas(elemento._id, elemento.apiTitle, elemento.apiImage)}}></button>
                             </div>
                         </div>
@@ -132,7 +133,7 @@ const handleVistas = async (movieId,apiTitle,apiImage ) => {
                     <li key={elemento._id} className='item'>
                     
                             <div className='contenido'>
-                    
+
                                 <img src={elemento.apiImage} alt="" />
                                 <p>{elemento.apiTitle}</p> 
                         
@@ -141,8 +142,8 @@ const handleVistas = async (movieId,apiTitle,apiImage ) => {
                                     console.log("ID de la película:", elemento._id,elemento.apiTitle,elemento.apiImage)
                                     handleFavorito1(elemento._id,  elemento.apiTitle, elemento.apiImage)}}></button>
                                 <button className='buttonVisto' onClick={() =>{
-                                    console.log("ID de la película:", elemento._id)
-                                    handleVistas(elemento._id, elemento.apiTitle, elemento.apiImage)}}></button>
+                                    console.log("ID de la película:", elemento._id,)
+                                    handleVistas(console.log(elemento._id === movieId ))}}></button>
                                 </div>
                             </div>
                     

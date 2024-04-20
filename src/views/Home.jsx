@@ -1,18 +1,21 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Login from './auth/Login'
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
-
+import { AuthContext } from '../context/AuthContext';
+import Navbar2 from '../components/Navbar2';
 
 
 export default function Home() {
+  const { isLoggedIn } = useContext(AuthContext);
 
 
 
   return (
     <>
     
-     <><Navbar/></>
+    {!isLoggedIn&&<Navbar2/>}
+    {isLoggedIn && <Navbar/>}
     <div className='contenedor-home'>
     
        

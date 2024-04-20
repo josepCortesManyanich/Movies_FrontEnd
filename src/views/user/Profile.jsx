@@ -44,6 +44,22 @@ function Profile() {
         data()
     },[])
 
+    
+
+    const handleDelete = async (favoritaId ) => {
+       
+        try {
+            const storedToken = localStorage.getItem('authToken');
+            const response = await axios.delete(`http://localhost:7000/api/user/${favoritaId}/borrar`,{
+                headers: {
+                    Authorization: `Bearer ${storedToken}`
+                }
+            });      
+            console.log(response);
+        } catch (error) {
+            console.error(error);
+        }
+    }
      return (
         <>
         <header className='header-profile'><Navbar/></header>
@@ -84,12 +100,17 @@ function Profile() {
                                 
                                     <ul className='list'>
                                         {favorita.data.favoritas.map((elem) => (
+                                               console.log('ID de la serie:', elem._id) ,
                                             <li key={elem._id} className='item'>
+                                                
                                                 <div className='contenido'>
                                                     <img src={elem.apiImage} alt="" />
                                                     <p>{elem.apiTitle}</p>
+                                                    <button onClick={() => {
+                                                        console.log("ID de la favorita:", elem._id),
+                                                        handleDelete(elem._id)}}>BORRAR</button>
                                                 </div>
-                                                
+                                             
                                                 </li>
                                         ))}
                                     </ul>
