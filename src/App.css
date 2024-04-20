@@ -536,7 +536,7 @@ body {
 
 
 /*IPHONE PRO MAX */
-@media only screen and (device-width: 435px) and (device-height: 940px) {
+@media only screen and (device-width: 435px) and (device-height: 935px) {
 
 
   .App {
@@ -602,12 +602,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 85%;
+    width: 100%;
     height: 70%;
   }
 
   .menu ul {
-    width: 85%;
+    width: 100yyy%;
     height: 100%;
     list-style-type: none;
     padding: 0;
