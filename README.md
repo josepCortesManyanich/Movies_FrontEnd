@@ -2,15 +2,8 @@
 
 ## Description
 
-This application is called XXX. It is used for ...
-
-> Add a picture (logo, design, actual screen, gif, etc, whichever you prefer.)
-![](picture.png)
-
----
-## Instructions
-
-When cloning the project, change the <code>sample.env</code> file name for <code>.env</code>. The project will run on **PORT 3000**.
+This application is called Bacardi movies. This application is still under development as it has not been deployed yet. There are still various features missing, and I want to change the app's design, increase the amount of seeded data, and improve some functions. However, the basic functions I wanted to introduce are working perfectly.
+The objective of building the application has been achieved, which was to implement a CRUD and ensure that authentications worked
 
 Then, run:
 ```bash
@@ -33,15 +26,17 @@ npm run start
 
 ### Backlog
 
-- User can ...
+- User can see all the movies and tv shows.
+- User can add movies and tv shows into a favorite list or watched list
+- User can delete movies from those lists
 
 ---
 
 ## Useful links
 
-- [Presentation slides]()
+
 - [Backend repository]()
-- [Backend deploy]()
-- [Deployed app]()
+
+
 
 
