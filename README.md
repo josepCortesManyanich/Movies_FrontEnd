@@ -35,7 +35,7 @@ npm run start
 ## Useful links
 
 
-- [Backend repository]()
+- [Backend repository](https://github.com/josepCortesManyanich/Movies_backend)
 
 
 
